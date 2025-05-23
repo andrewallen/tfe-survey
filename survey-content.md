@@ -14,16 +14,20 @@ Your insights will help:
 
 All responses are anonymous, confidential, and deeply appreciated. Thank you for helping to shape the future of TFE!
 
+Your answers will be stored securely and processed in accordance with the GDPR and UK data‑protection regulations.
+
 
 # Previous Members - Welcome Content
 
 ## Welcome
 
-We're sorry to see you go - but we're grateful you were part of the TFE community. We truly valued your time with us. Whether you've paused your membership temporarily or decided to leave, we'd appreciate understanding your experience and what influenced your decision.
+Thank you for training with us. Whether you've paused your membership temporarily or decided to leave, we'd appreciate your feedback on your experience and what influenced your decision.
 
 This optional survey is part of our commitment to listening carefully to all our members - past and present - as we shape the future of TFE. You don't have to complete it, but your honest feedback would mean a great deal and could help us improve, grow, and hopefully welcome you back when the time is right.
 
 It should only take a few minutes, and all responses are anonymous and deeply appreciated.
+
+Your answers will be stored securely and processed in accordance with the GDPR and UK data‑protection regulations.
 
 ## Understanding Your Membership Pause or Cancellation
 
@@ -79,7 +83,7 @@ Rank all the items below from most to least true for you, based on your personal
 - A space that's focused on high-quality coaching and technique
 - A fun and energising part of my week
 - A place that helps me feel physically and mentally stronger
-- A gym that genuinely cares about my progress
+- A gym that cares about my progress
 - A break from everyday life—time just for me
 - A place where I've achieved real, visible results
 - Somewhere I feel seen and known, not just another member
@@ -106,8 +110,6 @@ Have your goals changed since joining the gym? If so, how? [Optional, Free text 
 ## Your Experience of the New Timetable
 
 We've shifted from a simpler rotating bootcamp-style timetable to a more varied class timetable, which now includes specialized sessions like strength training, skill-building, and performance-focused classes.
-
-We've shifted from a simpler rotating bootcamp-style timetable to a more varied class timetable.
 
 Which overall approach do you prefer? [Radio buttons]
 - I prefer the previous simpler rotating timetable
@@ -325,4 +327,3 @@ If TFE evolves in the way you hope it will, how likely are you to recommend TFE 
 
 What could make your experience feel more motivating or inspiring? (Optional)
    [Free text box]
-
