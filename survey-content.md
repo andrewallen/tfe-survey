@@ -86,8 +86,8 @@ Rank these from most to least true for you:
 
 ## Fitness Goals
 
-Rank your top 3 fitness goals (Required)
-Drag-and-drop your top 3:
+Rank your top 3 fitness goals by dragging and dropping them into your preferred order (Required)
+Please drag and drop your top 3 fitness goals:
    - Build strength / muscle
    - Improve endurance/cardio fitness
    - Lose weight / burn fat
@@ -98,10 +98,12 @@ Drag-and-drop your top 3:
    - Train for a specific sport/event
    - Be part of a community / make friends
    - Other: _________
-If you have any other important goal or motivation not listed above, you can share it here: [Free text box]
-Have your goals changed since you joined the gym and if so how: [Optional, Free text box]
+Share any other important goals or motivations here: [Free text box]
+Have your goals changed since joining the gym? If so, how? [Optional, Free text box]
 
 ## Your Experience of the New Timetable
+
+We've shifted from a simpler rotating bootcamp-style schedule to a more varied class timetable, which now includes specialized sessions like strength training, skill-building, and performance-focused classes.
 
 We've shifted from a simpler rotating bootcamp-style schedule to a more varied class timetable.
 
@@ -111,9 +113,11 @@ Which overall approach do you prefer? [Radio buttons]
 - I would prefer a balance of both
 - I have no strong preference
 
-Optional: Please share why you prefer that option or what you think would be an ideal balance.
+Optional: We’d love to hear why you prefer that option or any suggestions for achieving an ideal balance.
 
 ## Timetable Navigation Experience
+
+We want to know how easy or difficult it is to navigate the class schedule.
 
 We'd like to understand how easy or difficult it is to navigate the current class schedule.
 
@@ -125,7 +129,7 @@ How would you describe your experience with understanding and navigating the cur
 - Very difficult
 
 Optional: What, if anything, do you find confusing or challenging about the schedule?
-Please share specific feedback so we can improve how the timetable is structured and presented.
+Share specific feedback to help us improve the timetable's structure and presentation.
 
 ## Class Preferences (1/3) — Enjoyment: Old vs New
 In this section, you'll be able to compare the classes you've tried from both the old and new timetables.  
