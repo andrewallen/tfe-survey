@@ -6,11 +6,13 @@ Thank you for being part of the TFE family!
 
 Everyone joins TFE with unique goals—whether that's building strength, improving endurance, finding community, or simply having fun. This survey is designed to help us shape our future class timetable, facilities, and services to better match your needs.
 
-The survey features both required and optional questions. We've aimed to keep it clear and efficient, while still allowing you to share detailed feedback if you wish. It should take between 10 and 30 minutes to complete, depending on how much optional feedback you choose to provide.
+The survey features both required and optional questions. We've aimed to keep it clear and efficient, while still allowing you to share detailed feedback if you wish. Most people finish in 7–12 minutes, or up to about 20 minutes if you add lots of comments.
 
 Your insights will help:
 - TFE leadership make decisions about timetables, class formats, and the wider gym experience.
 - You and other members benefit from a timetable, environment, and community that truly reflect your preferences and goals.
+
+We’ll share aggregated results with members in July.
 
 All responses are anonymous, confidential, and deeply appreciated. Thank you for helping to shape the future of TFE!
 
@@ -25,7 +27,9 @@ Thank you for training with us. Whether you've paused your membership temporaril
 
 This optional survey is part of our commitment to listening carefully to all our members - past and present - as we shape the future of TFE. You don't have to complete it, but your honest feedback would mean a great deal and could help us improve, grow, and hopefully welcome you back when the time is right.
 
-It should only take a few minutes, and all responses are anonymous and deeply appreciated.
+Most people finish in 5–8 minutes, and all responses are anonymous and deeply appreciated.
+
+We’ll share aggregated results with members in July.
 
 Your answers will be stored securely and processed in accordance with the GDPR and UK data‑protection regulations.
 
@@ -55,10 +59,9 @@ We'd like to better understand your reasons for stepping away.
 - [Free text]
 **If you were to return, how likely are you to rejoin in the next 6 months?**
 
-| Very Unlikely | Unlikely | Neutral | Likely | Very Likely |
-|:-------------:|:--------:|:-------:|:------:|:-----------:|
-| ( )           | ( )      | ( )     | ( )    | ( )         |
-- Very Likely
+| 1 Very Unlikely | 2 Unlikely | 3 Neutral | 4 Likely | 5 Very Likely |
+|:---------------:|:----------:|:---------:|:--------:|:-------------:|
+| ( )             | ( )        | ( )       | ( )      | ( )           |
 
 **What could we do differently to make your experience better, if you were to return?**
 - [Free text]
@@ -69,7 +72,14 @@ We'd like to better understand your reasons for stepping away.
 ## Participant Profile
 
 What is your age group? (Required)
-   ( ) 18-24   ( ) 25-34   ( ) 35-44   ( ) 45-54   ( ) 55+
+   ( ) 18–24   ( ) 25–34   ( ) 35–44   ( ) 45–54   ( ) 55–64   ( ) 65+
+
+What is your gender? (Optional)
+   ( ) Man
+   ( ) Woman
+   ( ) Non‑binary
+   ( ) Prefer to self‑describe: _________
+   ( ) Prefer not to say
 
 How long have you been a member? (Required)
    ( ) Less than 1 month   ( ) 1-3 months   ( ) 4-11 months   ( ) 1-2 years
@@ -111,7 +121,7 @@ Have your goals changed since joining the gym? If so, how? [Optional, Free text 
 
 We've shifted from a simpler rotating bootcamp-style timetable to a more varied class timetable, which now includes specialized sessions like strength training, skill-building, and performance-focused classes.
 
-Which overall approach do you prefer? [Radio buttons]
+Which overall approach do you prefer? (Required)
 - I prefer the previous simpler rotating timetable
 - I prefer the current varied and specific class timetable
 - I would prefer a balance of both
@@ -123,7 +133,7 @@ Optional: We’d love to hear why you prefer that option or any suggestions for 
 
 We want to know how easy or difficult it is to navigate the class timetable.
 
-How would you describe your experience with understanding and navigating the current timetable?
+How would you describe your experience with understanding and navigating the current timetable? (Required)
 - Very easy
 - Easy
 - Neutral
@@ -147,7 +157,7 @@ For each class type, please rate how much you enjoyed the older version and the 
 After each group, there's a free-text box where you can share likes, misses, or improvements.
 
 ## Class Preferences (2/3) — Interest: Bootcamps & Strength
-Rate your interest in each class (1 = Not interested, 5 = Very interested).
+Rate your Interest in each class (1 = Not Interested, 5 = Very Interested).
 
 ### Old format
 #### Bootcamps
@@ -259,7 +269,7 @@ Give us your ideal training blueprint by choosing the session type you’d most 
 - **Skill-Building / Technique** – learn the basics or refine form (e.g., Foundations, Fundamentals)
 - **Full-Body Strength / General Conditioning** – overall strength & structure (e.g., Build-Full Body, Strength Bootcamp)
 - **Targeted Strength / Hypertrophy** – lift-focused, muscle-building sessions (e.g., Build-Upper/Lower, Squat, Bench, Deadlift)
-- **HIIT / Functional Circuit** – high-intensity, time-efficient work (e.g., Metcon, Bootcamp-Hybrid/Cardio)
+- **HIIT / Functional Circuit** – high-intensity, time-efficient work (e.g., Metcon, Bootcamp‑Hybrid / Cardio)
 - **Performance / Competitive Conditioning** – metrics-driven challenge and progression (e.g., Hyrox)
 - **Boxing Fitness** – cardio, coordination, stress relief (e.g., BoxFit)
 - **Recovery & Mobility** – injury prevention, movement quality, wellbeing
