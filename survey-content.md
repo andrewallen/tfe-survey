@@ -16,7 +16,7 @@ We’ll share aggregated results with members in July.
 
 All responses are anonymous, confidential, and deeply appreciated. Thank you for helping to shape the future of TFE!
 
-Your answers will be stored securely and processed in accordance with the GDPR and UK data‑protection regulations.
+Your answers will be stored securely and processed in accordance with GDPR and UK data‑protection regulations. See our privacy statement for details.
 
 
 # Previous Members - Welcome Content
@@ -30,8 +30,6 @@ This optional survey is part of our commitment to listening carefully to all our
 Most people finish in 5–8 minutes, and all responses are anonymous and deeply appreciated.
 
 We’ll share aggregated results with members in July.
-
-Your answers will be stored securely and processed in accordance with the GDPR and UK data‑protection regulations.
 
 ## Understanding Your Membership Pause or Cancellation
 
@@ -66,82 +64,31 @@ We'd like to better understand your reasons for stepping away.
 **What could we do differently to make your experience better, if you were to return?**
 - [Free text]
 
+## Your Attendance Style
 
-# All Members
+Understanding your attendance habits helps us tailor our offerings to better suit your schedule and preferences.
 
-## Participant Profile
+1. What best describes your usual attendance pattern? (Choose one)
 
-What is your age group? (Required)
-   ( ) 18–24   ( ) 25–34   ( ) 35–44   ( ) 45–54   ( ) 55–64   ( ) 65+
+2. Which best describes when you usually attend? (Choose one)
+   ( ) I attend the same time slots on the same days each week (e.g. Mon/Wed/Fri at 7:15am)
+   ( ) I attend regularly but at varying times depending on my schedule
+   ( ) I attend when I can - there's no real pattern
 
-What is your gender? (Optional)
-   ( ) Man
-   ( ) Woman
-   ( ) Non‑binary
-   ( ) Prefer to self‑describe: _________
-   ( ) Prefer not to say
+3. How consistent is your weekly attendance overall in terms of both the number of visits and the timing? (Choose one)
+   ( ) Very consistent - I come the same number of times each week at similar times
+   ( ) Somewhat consistent - I usually attend each week, but the number of visits or timing varies a little
+   ( ) Inconsistent - both the number of visits and timing vary a lot from week to week
 
-How long have you been a member? (Required)
-   ( ) Less than 1 month   ( ) 1-3 months   ( ) 4-11 months   ( ) 1-2 years
-   ( ) 3-5 years   ( ) 6-8 years   ( ) 9+ years (Founding Member)
-
-## What TFE Represents to You
-
-Rank all the items below from most to least true for you, based on your personal experience:
-- A place where I feel part of a supportive community
-- Somewhere I go to be pushed and challenged
-- A space that's focused on high-quality coaching and technique
-- A fun and energising part of my week
-- A place that helps me feel physically and mentally stronger
-- A gym that cares about my progress
-- A break from everyday life—time just for me
-- A place where I've achieved real, visible results
-- Somewhere I feel seen and known, not just another member
-- A trusted space with a professional, high-performance ethos
-- Other: [Please specify]
-
-## Fitness Goals
-
-Rank your top 3 fitness goals by dragging and dropping them into your preferred order (Required)
-Please drag and drop your top 3 fitness goals:
-   - Build strength / muscle
-   - Improve endurance/cardio fitness
-   - Lose weight / burn fat
-   - Increase flexibility
-   - Increase mobility
-   - Improve overall health & well-being
-   - Gain confidence / relieve stress
-   - Train for a specific sport/event
-   - Be part of a community / make friends
-   - Other: _________
-Share any other important goals or motivations here: [Free text box]
-Have your goals changed since joining the gym? If so, how? [Optional, Free text box]
-
-## Your Experience of the New Timetable
-
-We've shifted from a simpler rotating bootcamp-style timetable to a more varied class timetable, which now includes specialized sessions like strength training, skill-building, and performance-focused classes.
-
-Which overall approach do you prefer? (Required)
-- I prefer the previous simpler rotating timetable
-- I prefer the current varied and specific class timetable
-- I would prefer a balance of both
-- I have no strong preference
-
-Optional: We’d love to hear why you prefer that option or any suggestions for achieving an ideal balance.
-
-## Timetable Navigation Experience
-
-We want to know how easy or difficult it is to navigate the class timetable.
-
-How would you describe your experience with understanding and navigating the current timetable? (Required)
-- Very easy
-- Easy
-- Neutral
-- Difficult
-- Very difficult
-
-Optional: What, if anything, do you find confusing or challenging about the timetable?
-Share specific feedback to help us improve the timetable's structure and presentation.
+## Motivation Barriers
+Which factors most often limit your attendance? (Select all that apply)
+[ ] Child‑care responsibilities  
+[ ] Work hours / shift patterns  
+[ ] Confidence about ability or fitness level  
+[ ] Transport / travel time  
+[ ] Health issues or injury  
+[ ] Cost  
+[ ] Other: _________
 
 ## Class Preferences (1/3) — Enjoyment: Old vs New
 In this section, you'll be able to compare the classes you've tried from both the old and new timetables.  
@@ -154,7 +101,7 @@ For each class type, please rate how much you enjoyed the older version and the 
 - Performance (Hyrox, Metcon)  
 - Recovery & Boxing  
 
-After each group, there's a free-text box where you can share likes, misses, or improvements.
+Anything else you’d like us to know about classes? (Optional, Max 140 char)
 
 ## Class Preferences (2/3) — Interest: Bootcamps & Strength
 Rate your Interest in each class (1 = Not Interested, 5 = Very Interested).
@@ -186,6 +133,12 @@ Rate your Interest in each class (1 = Not Interested, 5 = Very Interested).
 - Lift-Deadlift         ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
 - Lift-Squat/Dead/Bench ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
 
+Anything else you’d like us to know about classes? (Optional, Max 140 char)
+
+## Quick Mood Check
+On a scale of 1 😒 (Very Tired) to 5 😃 (Very Energised), how do you usually feel at the end of a typical TFE session?
+   ( ) 1 😒   ( ) 2   ( ) 3 🙂   ( ) 4   ( ) 5 😃
+
 ## Class Preferences (3/3) — Interest: Technique, Performance & Recovery
 Rate your interest in each class (1 = Not interested, 5 = Very interested).
 
@@ -200,6 +153,8 @@ Rate your interest in each class (1 = Not interested, 5 = Very interested).
 #### Boxing & Recovery
 - BoxFit   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
 - Recovery ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
+
+Anything else you’d like us to know about classes? (Optional, Max 140 char)
 
 ### New format
 #### Skills & Technique
@@ -216,6 +171,8 @@ Rate your interest in each class (1 = Not interested, 5 = Very interested).
 ## Coach Quality & Style
 
 Our coaches each bring a unique style to their sessions. We'd like your feedback on how you experience their coaching.
+
+**Please answer candidly; there are no bad scores—only honest ones.**
 
 Please rate the coaching style and quality of each of the following (if applicable):
 - Milla
@@ -244,23 +201,16 @@ Do you use 1:1 Personal Training sessions at TFE?
 - I did in the past but not right now
 - No
 
+Which time slot would you be most likely to use Open Gym?
+   ( ) Early Morning (06:00–09:00)
+   ( ) Mid‑morning (09:00–12:00)
+   ( ) Lunch (12:00–14:00)
+   ( ) Afternoon (14:00–17:00)
+   ( ) Evening (17:00–21:00)
+   ( ) Weekend
+   ( ) Not sure
+
 Optional: Please share any suggestions for improving the accessibility or usefulness of Open Gym or Personal Training options.
-
-## Your Attendance Style
-
-Understanding your attendance habits helps us tailor our offerings to better suit your schedule and preferences.
-
-1. What best describes your usual attendance pattern? (Choose one)
-
-1. Which best describes when you usually attend? (Choose one)
-   ( ) I attend the same time slots on the same days each week (e.g. Mon/Wed/Fri at 7:15am)
-   ( ) I attend regularly but at varying times depending on my schedule
-   ( ) I attend when I can - there's no real pattern
-
-2. How consistent is your weekly attendance overall in terms of both the number of visits and the timing? (Choose one)
-   ( ) Very consistent - I come the same number of times each week at similar times
-   ( ) Somewhat consistent - I usually attend each week, but the number of visits or timing varies a little
-   ( ) Inconsistent - both the number of visits and timing vary a lot from week to week
 
 ## Design Your Perfect TFE Week
 Give us your ideal training blueprint by choosing the session type you’d most like to attend in each time-slot. Fill as many or as few slots as you wish—multiple sessions per day are totally fine if that matches your rhythm.
@@ -269,7 +219,7 @@ Give us your ideal training blueprint by choosing the session type you’d most 
 - **Skill-Building / Technique** – learn the basics or refine form (e.g., Foundations, Fundamentals)
 - **Full-Body Strength / General Conditioning** – overall strength & structure (e.g., Build-Full Body, Strength Bootcamp)
 - **Targeted Strength / Hypertrophy** – lift-focused, muscle-building sessions (e.g., Build-Upper/Lower, Squat, Bench, Deadlift)
-- **HIIT / Functional Circuit** – high-intensity, time-efficient work (e.g., Metcon, Bootcamp‑Hybrid / Cardio)
+- **HIIT / Functional Circuit** – high-intensity, time-efficient work (e.g., Metcon, Bootcamp-Hybrid / Cardio)
 - **Performance / Competitive Conditioning** – metrics-driven challenge and progression (e.g., Hyrox)
 - **Boxing Fitness** – cardio, coordination, stress relief (e.g., BoxFit)
 - **Recovery & Mobility** – injury prevention, movement quality, wellbeing
@@ -293,25 +243,60 @@ _There are no wrong answers—focus on what would genuinely help you feel strong
 | Afternoon   |     |     |     |     |     |     |     |
 | Evening     |     |     |     |     |     |     |     |
 
+## Recovery & Well‑being Resources
+Which of these additional resources would you be likely to use if offered? (Select all that apply)
+[ ] Sports massage / physiotherapy  
+[ ] Guided mobility or stretch classes  
+[ ] Meditation or breath‑work sessions  
+[ ] Nutrition clinic / consultation  
+[ ] Sleep‑optimisation workshops  
+[ ] Other: _________
+
+## Timetable Navigation Experience
+
+We want to know how easy or difficult it is to navigate the class timetable.
+
+How would you describe your experience with understanding and navigating the current timetable? (Required)
+- Very easy
+- Easy
+- Neutral
+- Difficult
+- Very difficult
+- I don't know enough to rate
+
+Optional: What, if anything, do you find confusing or challenging about the timetable?
+Share specific feedback to help us improve the timetable's structure and presentation.
+
+## Your Experience of the New Timetable
+
+We've shifted from a simpler rotating bootcamp-style timetable to a more varied class timetable, which now includes specialized sessions like strength training, skill-building, and performance-focused classes.
+
+Which overall approach do you prefer? (Required)
+- I prefer the previous simpler rotating timetable
+- I prefer the current varied and specific class timetable
+- I would prefer a balance of both
+- I have no strong preference
+
+Optional: We’d love to hear why you prefer that option or any suggestions for achieving an ideal balance.
+
 ## Parking & Outdoor Areas
 
 We understand that parking and outdoor space can affect your overall experience at the gym.
 
-How often do you have difficulty finding parking at TFE?
-- Never
-- Rarely
-- Sometimes
-- Often
-- Always
+How often do you have difficulty finding parking at TFE? (1 = Never, 5 = Always)
+   ( ) 1 Never   ( ) 2 Rarely   ( ) 3 Sometimes   ( ) 4 Often   ( ) 5 Always
 
 Optional: Please share any comments about the car park, outdoor environment, or suggestions for improvement.
 
 ## Facilities, Communication & Niggles
 
-Rate the following areas (1 = Poor, 5 = Excellent)
+**Please answer candidly; there are no bad scores—only honest ones.**
+
+Rate the following areas (select one number for each). 1 = Poor, 5 = Excellent
 
 - Equipment availability      		( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
 - Cleanliness                 		( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
+- Attention check: Please select '4 Often' for this row   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
 - Class environment           		( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
 - Communication effectiveness 	( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
 
@@ -319,9 +304,46 @@ Is there anything you'd like to flag?	(Optional)
 - Facility niggles / quick fixes: 	[Free text]
 - Suggestions to improve communication: [Free text]
 
+## Pricing & Value Perception
+How fair does our current pricing feel for what you get?  
+   ( ) 1 Very Unfair   ( ) 2   ( ) 3 Neutral   ( ) 4   ( ) 5 Very Fair
+
+### Preferred Communication Channels (Choose up to 2)
+[ ] Email newsletters  
+[ ] WhatsApp broadcast list  
+[ ] Push notifications via GloFox app  
+[ ] Instagram/Facebook posts  
+[ ] Phone/SMS  
+[ ] Other: _________
+
+## Diversity & Inclusion Climate
+Please indicate how much you agree with the following statement:  
+“I feel welcomed and respected at TFE regardless of my background.”  
+   ( ) 1 Strongly Disagree   ( ) 2   ( ) 3 Neutral   ( ) 4   ( ) 5 Strongly Agree
+
+## Participant Profile
+
+What is your age group? (Required)
+   ( ) 16–24   ( ) 25–34   ( ) 35–44   ( ) 45–54   ( ) 55–64   ( ) 65+
+
+What is your gender? (Optional)
+   ( ) Man
+   ( ) Woman
+   ( ) Non‑binary
+   ( ) Self‑describe (optional): _________
+   ( ) Prefer not to say
+
+[ ] I have a condition or disability that affects how I train (Optional)
+
+How long have you been a member? (Required)
+   ( ) Less than 1 month   ( ) 1-3 months   ( ) 4-11 months   ( ) 1-2 years
+   ( ) 3-5 years   ( ) 6-8 years   ( ) 9+ years (Founding Member)
+
 # Additional Questions for Current Members Only
 
 ## Loyalty & Motivation
+
+**There are no right or wrong answers—please respond honestly and intuitively.**
 
 If TFE's classes and experience stay exactly as they are now, how likely are you to still be a member 12 months from now?
    ( ) 1 Very Unlikely   ( ) 2   ( ) 3 Neutral   ( ) 4   ( ) 5 Very Likely
