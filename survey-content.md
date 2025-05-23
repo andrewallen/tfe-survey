@@ -1,4 +1,6 @@
-# Welcome - All Members
+# Current Members - Welcome Content
+
+## Welcome
 
 Thank you for being part of the TFE family!
 
@@ -8,12 +10,12 @@ The survey features both required and optional questions. We've aimed to keep it
 
 Your insights will help:
 - TFE leadership make decisions about timetables, class formats, and the wider gym experience.
-- You and other members benefit from a schedule, environment, and community that truly reflect your preferences and goals.
+- You and other members benefit from a timetable, environment, and community that truly reflect your preferences and goals.
 
 All responses are anonymous, confidential, and deeply appreciated. Thank you for helping to shape the future of TFE!
 
 
-# Previous Members - Additional Content
+# Previous Members - Welcome Content
 
 ## Welcome
 
@@ -23,7 +25,7 @@ This optional survey is part of our commitment to listening carefully to all our
 
 It should only take a few minutes, and all responses are anonymous and deeply appreciated.
 
-## Why did you leave or pause your membership?
+## Understanding Your Membership Pause or Cancellation
 
 We'd like to better understand your reasons for stepping away.
 
@@ -34,24 +36,24 @@ We'd like to better understand your reasons for stepping away.
 - I'm unlikely to return
 
 **What were the main reasons you paused or left?** (Select all that apply)
-- Schedule no longer worked for me
+- The timetable no longer fits my schedule
 - Class types or format didn't suit me
-- Cost of membership
+- Cost of Membership
 - I moved away from the area
 - Other commitments took priority
 - Facility/environment-related concerns
 - Injuries, health or fitness reasons
 - Prefer training elsewhere
-- Other: [Please specify]
+- Other (please specify): [Please specify]
 
-**What would encourage you to return to TFE in the future?**
+**What would encourage you to return to TFE in the future?**  
+(e.g., new class types, flexible schedules, improved facilities, special promotions)
 - [Free text]
-
 **If you were to return, how likely are you to rejoin in the next 6 months?**
-- Very Unlikely
-- Unlikely
-- Neutral
-- Likely
+
+| Very Unlikely | Unlikely | Neutral | Likely | Very Likely |
+|:-------------:|:--------:|:-------:|:------:|:-----------:|
+| ( )           | ( )      | ( )     | ( )    | ( )         |
 - Very Likely
 
 **What could we do differently to make your experience better, if you were to return?**
@@ -69,9 +71,9 @@ How long have you been a member? (Required)
    ( ) Less than 1 month   ( ) 1-3 months   ( ) 4-11 months   ( ) 1-2 years
    ( ) 3-5 years   ( ) 6-8 years   ( ) 9+ years (Founding Member)
 
-## What does TFE mean to you?
+## What TFE Represents to You
 
-Rank these from most to least true for you:
+Rank all the items below from most to least true for you, based on your personal experience:
 - A place where I feel part of a supportive community
 - Somewhere I go to be pushed and challenged
 - A space that's focused on high-quality coaching and technique
@@ -82,7 +84,7 @@ Rank these from most to least true for you:
 - A place where I've achieved real, visible results
 - Somewhere I feel seen and known, not just another member
 - A trusted space with a professional, high-performance ethos
-- Other or tell us more: [Free text box]
+- Other: [Please specify]
 
 ## Fitness Goals
 
@@ -103,13 +105,13 @@ Have your goals changed since joining the gym? If so, how? [Optional, Free text 
 
 ## Your Experience of the New Timetable
 
-We've shifted from a simpler rotating bootcamp-style schedule to a more varied class timetable, which now includes specialized sessions like strength training, skill-building, and performance-focused classes.
+We've shifted from a simpler rotating bootcamp-style timetable to a more varied class timetable, which now includes specialized sessions like strength training, skill-building, and performance-focused classes.
 
-We've shifted from a simpler rotating bootcamp-style schedule to a more varied class timetable.
+We've shifted from a simpler rotating bootcamp-style timetable to a more varied class timetable.
 
 Which overall approach do you prefer? [Radio buttons]
-- I prefer the previous simpler rotating schedule
-- I prefer the current varied and specific class schedule
+- I prefer the previous simpler rotating timetable
+- I prefer the current varied and specific class timetable
 - I would prefer a balance of both
 - I have no strong preference
 
@@ -117,9 +119,7 @@ Optional: We’d love to hear why you prefer that option or any suggestions for 
 
 ## Timetable Navigation Experience
 
-We want to know how easy or difficult it is to navigate the class schedule.
-
-We'd like to understand how easy or difficult it is to navigate the current class schedule.
+We want to know how easy or difficult it is to navigate the class timetable.
 
 How would you describe your experience with understanding and navigating the current timetable?
 - Very easy
@@ -128,7 +128,7 @@ How would you describe your experience with understanding and navigating the cur
 - Difficult
 - Very difficult
 
-Optional: What, if anything, do you find confusing or challenging about the schedule?
+Optional: What, if anything, do you find confusing or challenging about the timetable?
 Share specific feedback to help us improve the timetable's structure and presentation.
 
 ## Class Preferences (1/3) — Enjoyment: Old vs New
@@ -218,7 +218,7 @@ Optional: If you'd like to share any comments about a specific coach, feel free 
 
 ## Open Gym & Personal Training
 
-TFE is primarily a class-based gym, but some members also use Open Gym or Personal Training.
+TFE is primarily a class-based gym, but some members also use Open Gym for independent workouts, such as practicing specific lifts or cardio routines, or Personal Training for tailored coaching to achieve their unique fitness goals.
 
 Do you use Open Gym for independent training?
 - Yes - regularly
@@ -231,21 +231,24 @@ Do you use 1:1 Personal Training sessions at TFE?
 - Occasionally
 - I did in the past but not right now
 - No
-Optional: If there's anything that would make these options more useful or accessible, let us know below.
+
+Optional: Please share any suggestions for improving the accessibility or usefulness of Open Gym or Personal Training options.
 
 ## Your Attendance Style
 
-How would you best describe your gym attendance habits? (Required)
+Understanding your attendance habits helps us tailor our offerings to better suit your schedule and preferences.
+
+1. What best describes your usual attendance pattern? (Choose one)
 
 1. Which best describes when you usually attend? (Choose one)
    ( ) I attend the same time slots on the same days each week (e.g. Mon/Wed/Fri at 7:15am)
    ( ) I attend regularly but at varying times depending on my schedule
    ( ) I attend when I can - there's no real pattern
 
-2. How consistent is your weekly attendance overall? (Choose one)
-   ( ) Very consistent - I come the same number of times each week
-   ( ) Somewhat consistent - I usually attend each week, but it varies a little
-   ( ) Inconsistent - it varies a lot from week to week
+2. How consistent is your weekly attendance overall in terms of both the number of visits and the timing? (Choose one)
+   ( ) Very consistent - I come the same number of times each week at similar times
+   ( ) Somewhat consistent - I usually attend each week, but the number of visits or timing varies a little
+   ( ) Inconsistent - both the number of visits and timing vary a lot from week to week
 
 ## Design Your Perfect TFE Week
 Give us your ideal training blueprint by choosing the session type you’d most like to attend in each time-slot. Fill as many or as few slots as you wish—multiple sessions per day are totally fine if that matches your rhythm.
