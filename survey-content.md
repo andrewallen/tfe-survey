@@ -148,16 +148,16 @@ _If you selected more than one, which is your **single biggest** barrier?_
 ---
 
 
-## Class Preferences (1/3) — Enjoyment: Old vs New *(Current members only)*
+## Class Preferences - Enjoyment: Old vs New *(Current members only)*
 In this section, you'll be able to compare the classes you've tried from both the old and new timetables.  
 For each class type, please rate how much you enjoyed the older version and the newer version (if you've tried both). Select **N/A** if you haven't attended a version.
 
 ### Groupings
-   ( ) Bootcamps (Cardio, Strength, Hybrid, MST)  
-   ( ) Build & Lift (Strength classes)  
-   ( ) Skills-based (Foundations vs Fundamentals)  
-   ( ) Performance (Hyrox, Metcon)  
-   ( ) Recovery & Boxing  
+   - Bootcamps (Cardio, Strength, Hybrid, MST)  
+   - Build & Lift (Strength classes)  
+   - Skills-based (Foundations vs Fundamentals)  
+   - Performance (Hyrox, Metcon)  
+   - Recovery & Boxing  
 
 Anything else you’d like us to know about classes? (Optional, Max 140 char)
 
@@ -167,11 +167,14 @@ Rate your Interest in each class (1 = Not Interested, 5 = Very Interested).
 ### Old format
 #### Bootcamps
 *(1 = Not interested, 5 = Very interested, N/A = haven’t tried)*
-   ( ) Bootcamp-Advanced ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
-   ( ) Bootcamp-Cardio   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
-   ( ) Bootcamp-Strength ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
-   ( ) Bootcamp-Hybrid   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
-   ( ) Bootcamp-MST      ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
+Core Bootcamp Types:
+   - Cardio   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
+   - Strength ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
+   - Hybrid   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
+
+Notible Bootcamp clases
+   - MST (Strength)
+   - 1000 Rep Challenge (Hybrid)
 
 #### Strength
 *(1 = Not interested, 5 = Very interested, N/A = haven’t tried)*
@@ -230,6 +233,7 @@ Anything else you’d like us to know about classes? (Optional, Max 140 char)
 #### Boxing & Recovery
    ( ) BoxFit   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
    ( ) Recovery ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
+
 
 ## Coach Quality & Style *(Current members only)*
 
@@ -343,6 +347,7 @@ Which overall approach do you prefer? (Required)
 
 Optional: We’d love to hear why you prefer that option or any suggestions for achieving an ideal balance.
 
+
 ## Parking & Outdoor Areas *(All members)*
 
 We understand that parking and outdoor space can affect your overall experience at the gym.
@@ -351,6 +356,7 @@ How often do you have difficulty finding parking at TFE? (1 = Never, 5 = Always)
    ( ) 1 Never   ( ) 2 Rarely   ( ) 3 Sometimes   ( ) 4 Often   ( ) 5 Always
 
 Optional: Please share any comments about the car park, outdoor environment, or suggestions for improvement.
+
 
 ## Facilities, Communication & Niggles *(All members)*
 
@@ -367,6 +373,7 @@ Rate the following areas (select one number for each). 1 = Poor, 5 = Excellent
 Is there anything you'd like to flag?	(Optional)
    ( ) Facility niggles / quick fixes: 	[Free text]
    ( ) Suggestions to improve communication: [Free text]
+
 
 ## Pricing & Value Perception *(All members)*
 How fair do you feel our current pricing is for what you receive?  

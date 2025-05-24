@@ -1,0 +1,225 @@
+# Bootcamp Classes by Type
+
+## Cardio
+- 21 Jump Street
+- 3 Intervals
+- 3 Is the Magic Number
+- 3 Minute Rounds
+- 4 HIIT Combo
+- 6 Mins Of Fun
+- 80/60/40
+- AMRAP
+- AMRAP+
+- Around The Block
+- BaCardio & Coke
+- Back To One
+- Bodyweight Accumulator
+- Bodyweight Blast
+- By The Numbers
+- Can You Chip In
+- Cardio Arrest
+- Cardio Is Hardio
+- Cardio With Education
+- Cardio Blast
+- Carry On Cardio
+- Carry On Complexing
+- Chipper By The Dozen
+- Combat Chaos
+- Core And Cardio Meltdown
+- Dirty Dozen
+- Endure
+- Every Minute Gets Worse
+- Fast & Agile
+- Fat Burn 30
+- Filthy 50
+- For Time
+- Get The Air In
+- Hell And Back
+- Jacob's Ladder
+- Matrix Meltdown
+- MetCamp
+- MetCon Mania
+- Never Stop Moving
+- PODBOX
+- Run Forest Run
+- Sprint Day
+- The Stripper
+- Three Is The Magic Number
+- Triple Trouble
+- Triple Whammy
+- Unkillable
+
+## Strength
+- 2s Up
+- 5x5x5
+- 6, 12, 24
+- Accumulate The Burn
+- Afterburn
+- Arnie's Bodypart Blast
+- Baby Got Back
+- Bar Bar Strong Sheep
+- BodyWEIGHT
+- Bring Your Own Burn
+- Build My Burn
+- Build Your Own Burn
+- Buildcamp
+- Building Blocks
+- Burn In 45
+- Burn Out
+- Chase The Burn
+- Coach's Creation
+- Don't Let Go
+- Down The Middle
+- Drop It Like It's Hot
+- Elements
+- Every Part Of Me
+- Feel The Burn
+- Gun Show
+- Hang Tough
+- Head To Toe
+- Hold It
+- Hulk Workout
+- I Have The Power
+- Keep Calm And Lift
+- Lean & Mean
+- Light The Spark
+- Lift 'N' Shift
+- Lower Body Blast
+- Midweek Strength
+- Off T' Market
+- Oh My Quad
+- P's In A BOD
+- Strengthervals
+- Sunday Strength 6 12 25
+- Superset Sunday
+- The Burn
+- Timers
+- Top & Bottom
+- Top And Bottom
+- Tri-Mendous
+- Triple 20
+- Upper Body Blast
+- You Are What You Lift
+- 50 Shades Of Gains
+
+## Mixed / All Body
+- 3 In 1
+- 3 2 1
+- 30-30-30
+- 30/60/90
+- 4 Mins To Playtime
+- 5 & 50s
+- 50/50
+- 6 O'Clock
+- A Night At The Bar
+- Accelerator
+- Accumulating Madness
+- Accumulator
+- Additions
+- Best Of Both
+- Cherry On Top
+- Coach's Creation
+- COREporal Punishment
+- Core @ The Core
+- Core Conditioning
+- Core Conditioning & Control
+- Countdown
+- Countdown...and Up
+- Crazy 8s
+- Double Trouble
+- EMOM Two Ways
+- EMOM/E3MOM
+- Four Corners
+- Harder, Faster, Stronger, Fitter
+- Heaven & Hell
+- Inside Outside
+- It's Complexicated
+- Kettlebell Blast
+- Kettlebell Complex & Conditioning
+- Kettlehell
+- Legs And Lungs
+- Lesser Of 2 Evils
+- Mini Circuit Meltdown
+- Mix It Up
+- Mixed Model
+- Never Miss A Skip
+- Non Stop
+- Old School Circuits
+- Pump Up The Volume
+- Reppy, Setty, Go!
+- S Club 7
+- SCC
+- Switch Up
+- Tabata
+- Tabata Rest Or Not
+- Tabata S&C
+- Tabata? Totally!
+- The Heptathlon Bootcamp
+- The Punisher
+- The Unaccumulator
+- Traffic Lights
+- Triple Crippler
+- Triple Decker
+- Unbroken
+- Up By 10
+- Walk The Line
+- What's Tabata With You
+- Wild Thing
+- You Take My Breath Away
+
+## Fun / Team Based
+- 1000 Rep Challenge
+- A Bootcamp Of 2 Halves
+- Adventure Bootcamp
+- Alpha Set
+- Around In Circles
+- Assault Bike Challenge
+- Boards Against Humanity
+- Bootcamp Adventure
+- Bootcamp Baseball
+- Build Them Up
+- Can You Finish?
+- Challenge Circuit
+- Coach's Creation
+- Cone Battle
+- Contenders
+- Day At The Races
+- Deck Of Cards
+- Hungry Hippos
+- Lap Of Honour
+- Las Vegas Lucky 7s
+- Leaderboard
+- Monopoly
+- On The Pull
+- Partner Pressure
+- Pick 'N' Mix
+- Please Be Quick
+- Prison Break
+- Prowler Challenge
+- Prowler Mile
+- Prowler Team Challenge
+- Pyramid Pairs
+- Rower Challenge
+- Running With The Ball
+- Scrabble
+- Settle The Score
+- Spartan 300
+- Sports Day
+- Squad Goals
+- Starts In Your Eyes
+- Team Challenge
+- The 300
+- The Big Dipper
+- The Dice Decides
+- Three's A Company
+- Triple Header
+- Unlucky Dip
+- Wheel Of Misfortune
+- You Go, I Go
+- You Go, I Go, We Go
+- 7 Is Heaven
+
+## MST
+- Coach's Creation
+- MST 
+
