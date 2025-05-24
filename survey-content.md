@@ -1,6 +1,18 @@
 # TFE Member Survey
 
----
+
+## Welcome *(Previous members only)*
+
+**Thank you for being part of TFE in the past.** We understand circumstances change, and we truly appreciate the time you trained with us.
+
+This optional survey takes **about 5 – 8 minutes** and contains both required and optional questions.
+
+**Why bother?** Your honest insights will help us improve class formats, schedules, and facilities for current and future members—and may shape changes you’d value if you ever decide to return. We’ll share aggregated findings with the whole community in **July**.
+
+All responses are anonymous and processed in line with GDPR. **There are no right or wrong answers—please be candid.**
+
+Click **Next** to begin.
+
 
 ## Welcome *(Current members only)*
 
@@ -16,88 +28,125 @@ All responses are anonymous and handled under GDPR. **There are no right or wron
 Click **Next** to begin.
 
 
-## Welcome *(Previous members only)*
-
-**Thank you for being part of TFE in the past.** We understand circumstances change, and we truly appreciate the time you trained with us.
-
-This optional survey takes **about 5 – 8 minutes** and contains both required and optional questions.
-
-**Why bother?** Your honest insights will help us improve class formats, schedules, and facilities for current and future members—and may shape changes you’d value if you ever decide to return. We’ll share aggregated findings with the whole community in **July**.
-
-All responses are anonymous and processed in line with GDPR. **There are no right or wrong answers—please be candid.**
-
-Click **Next** to begin.
-
----
-
 ## Understanding Your Membership Pause or Cancellation *(Previous members only)*
 
-We'd like to better understand your reasons for stepping away.
+We’d like to understand when you left, why you left, and what (if anything) might bring you back. All responses are anonymous.
 
-1. **What best describes your current status?** (Choose one) [Required]
-   ( ) I've cancelled my membership
-   ( ) I've paused my membership
-   ( ) I'm considering returning soon
-   ( ) I'm unlikely to return
+1. When did you pause or cancel your membership? *(Choose one)*
+( ) Within the last 3 months  
+( ) 3 – 6 months ago  
+( ) 7 – 12 months ago  
+( ) 1 – 2 years ago  
+( ) More than 2 years ago  
 
-2. **What were the main reasons you paused or left?** (Select all that apply) [Required]
-   ( ) The timetable no longer fits my schedule
-   ( ) Class types or format didn't suit me
-   ( ) Cost of Membership
-   ( ) I moved away from the area
-   ( ) Other commitments took priority
-   ( ) Facility/environment-related concerns
-   ( ) Injuries, health or fitness reasons
-   ( ) Prefer training elsewhere
-   ( ) Other (please specify): [Please specify]
+2. What is your current membership status? *(Choose one)*
+( ) Membership cancelled  
+( ) Membership paused / on hold  
 
-3. **What would encourage you to return to TFE in the future?**
-(e.g., new class types, flexible schedules, improved facilities, special promotions)
-   [Free text]
+3.  How likely are you to return to TFE? *(Choose one)*
+( ) Actively planning to return  
+( ) Considering a return  
+( ) Unlikely to return  
 
-4. **If you were to return, how likely are you to rejoin in the next 6 months?** (Choose One) [Required]
-   ( ) Very Unlikely
-   ( ) Unlikely
-   ( ) Neutral
-   ( ) Likely
-   ( ) Very Likely
+4. What were the **main** reasons you paused or left? *(Select up to three)*
+- [ ] Class types / formats didn’t suit me  
+- [ ] Cost of membership  
+- [ ] Facility cleanliness or equipment  
+- [ ] Gym atmosphere / culture  
+- [ ] Injury, health or fitness reasons  
+- [ ] Moved away from the area  
+- [ ] Other commitments took priority  
+- [ ] Prefer training elsewhere  
+- [ ] Timetable didn’t fit my schedule  
+- [ ] Other (please specify): _________  
 
-5. **What could we do differently to make your experience better, if you were to return?**
-   [Free text]
+5. Where do you mainly train now? *(Choose one)*
+( ) Another functional-fitness gym  
+( ) Commercial / chain gym  
+( ) Home workouts / online  
+( ) I’m not training at the moment  
+( ) Other: _________  
+
+6. What would encourage you to return to TFE in the future?  
+*(If nothing specific comes to mind, feel free to leave blank.)*  
+[Free text]
+
+7. If you decided to return, how likely are you to rejoin in the next 6 months? *(Choose one)*
+( ) Very unlikely ( ) Unlikely ( ) Neutral ( ) Likely ( ) Very likely  
+
+8. What could we do differently to make your experience better?  
+_Select any prompt that sparks ideas, or write your own thoughts._  
+Timetable changes / Pricing / Facility upgrades / Community events / Other  
+[Free text]
+
+
+## Your Past Attendance Style *(Previous members only)*  
+_Think back to the **last month you were active at TFE**…_
+
+1. **About how many sessions did you attend per week?**  *(Choose one)*  
+   ( ) 5 + sessions (most days)  
+   ( ) 3 – 4 sessions  
+   ( ) 1 – 2 sessions  
+   ( ) A few sessions per month  
+   ( ) I attended infrequently / drop-in only  
+
+2. **Which best describes when you usually attended?**  *(Choose one)*  
+   ( ) Same time slots on the same days each week  
+   ( ) Varying time slots, but every week  
+   ( ) I attended when I could – no real pattern  
+
+3. **How consistent was your attendance overall?**  *(Choose one)*  
+   ( ) Very consistent – same number & timing each week  
+   ( ) Somewhat consistent – small variations week to week  
+   ( ) Inconsistent – number of visits and timing varied a lot  
+
+
+## Your Attendance Style *(Current members only)*  
+_In the last **4 weeks**…_
+
+_These questions only show because you’re an active member._
+
+1. **About how many sessions have you attended per week?**  *(Choose one)*  
+   ( ) 5 + sessions (most days)  
+   ( ) 3 – 4 sessions  
+   ( ) 1 – 2 sessions  
+   ( ) A few sessions per month  
+   ( ) I haven’t trained at TFE in the last 4 weeks  
+
+2. **Which best describes when you usually attend?**  *(Choose one)*  
+   ( ) Same time slots on the same days each week  
+   ( ) Varying time slots, but every week  
+   ( ) I attend when I can – there’s no real pattern  
+
+3. **How consistent is your attendance overall?**  *(Choose one)*  
+   ( ) Very consistent – same number & timing each week  
+   ( ) Somewhat consistent – small variations week to week  
+   ( ) Inconsistent – number of visits and timing vary a lot  
+
+
+## Motivation Barriers *(All members)*  
+
+Please tell us the main things that sometimes keep or kept you from getting to TFE. Select **up to three** that feel most relevant right now.
+
+- [ ] Child-care responsibilities  
+- [ ] Classes often fully booked  
+- [ ] Confidence about ability or fitness level  
+- [ ] Cost  
+- [ ] Health issues or injury  
+- [ ] Parking availability  
+- [ ] Transport / travel time  
+- [ ] Weather / daylight hours  
+- [ ] Work hours / shift patterns  
+- [ ] Other commitments took priority  
+- [ ] None of the above  
+- [ ] Other: _________  
+
+_If you selected more than one, which is your **single biggest** barrier?_  
+[Free text]
+
 
 ---
 
-## Your Attendance Style *(All members)*
-
-Understanding your attendance habits helps us tailor our offerings to better suit your schedule and preferences.
-
-1. **What best describes your usual attendance pattern?** (Choose one)
-   ( ) 5 + sessions per week (most days)  
-   ( ) 3 – 4 sessions per week  
-   ( ) 1 – 2 sessions per week  
-   ( ) A few sessions per month  
-   ( ) I attend infrequently / drop-in only
-
-2. **Which best describes when you usually attend?** (Choose one)
-   ( ) I attend the same time slots on the same days each week (e.g. Mon/Wed/Fri at 7:15am)
-   ( ) I attend regularly but at varying times depending on my schedule
-   ( ) I attend when I can    ( ) there's no real pattern
-
-3. **How consistent is your weekly attendance overall in terms of both the number of visits and the timing?** (Choose one)
-   ( ) Very consistent    ( ) I come the same number of times each week at similar times
-   ( ) Somewhat consistent    ( ) I usually attend each week, but the number of visits or timing varies a little
-   ( ) Inconsistent    ( ) both the number of visits and timing vary a lot from week to week
-
-## Motivation Barriers *(All members)*
-
-1. **Which factors most often limit your attendance?** (Select all that apply)
-   ( ) Child‑care responsibilities  
-   ( ) Work hours / shift patterns  
-   ( ) Confidence about ability or fitness level  
-   ( ) Transport / travel time  
-   ( ) Health issues or injury  
-   ( ) Cost  
-   ( ) Other: _________
 
 ## Class Preferences (1/3) — Enjoyment: Old vs New *(Current members only)*
 In this section, you'll be able to compare the classes you've tried from both the old and new timetables.  
