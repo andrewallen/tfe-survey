@@ -1,7 +1,21 @@
 # TFE Member Survey
 
+Questions are labelled as follows:
 
-## Welcome *(Previous members only)*
+Ax = all member questions
+Cx = current member questions
+Nx = new member questions 
+Px = previous member questions
+
+Depending on the target member, you'd be targetted the appropriate questions. 
+
+e.g. a new member would see A + C + N while a previous member would see A + P
+
+
+---
+
+
+## P1. Welcome *(Previous members only)*
 
 **Thank you for being part of TFE in the past.** We understand circumstances change, and we truly appreciate the time you trained with us.
 
@@ -14,7 +28,10 @@ All responses are anonymous and processed in line with GDPR. **There are no righ
 Click **Next** to begin.
 
 
-## Welcome *(Current members only)*
+---
+
+
+## C1. Welcome *(Current members only)*
 
 **Thank you for being part of the TFE community.**  
 Your feedback helps us fine-tune our **class timetable, facilities, pricing, and member services** so they work better for you.
@@ -28,112 +45,145 @@ All responses are anonymous and handled under GDPR. **There are no right or wron
 Click **Next** to begin.
 
 
-## Understanding Your Membership Pause or Cancellation *(Previous members only)*
+---
 
-We’d like to understand when you left, why you left, and what (if anything) might bring you back. All responses are anonymous.
 
-1. When did you pause or cancel your membership? *(Choose one)*
-( ) Within the last 3 months  
-( ) 3 – 6 months ago  
-( ) 7 – 12 months ago  
-( ) 1 – 2 years ago  
-( ) More than 2 years ago  
+## P2. Understanding Your Membership Pause or Cancellation *(Previous members only)*
 
-2. What is your current membership status? *(Choose one)*
-( ) Membership cancelled  
-( ) Membership paused / on hold  
+_We’d like to understand when you left, why you left, and what (if anything) might bring you back. All responses are anonymous._
 
-3.  How likely are you to return to TFE? *(Choose one)*
-( ) Actively planning to return  
-( ) Considering a return  
-( ) Unlikely to return  
+1. **When did you pause or cancel your membership?**
+_(Choose one)_
+   ( ) Within the last 3 months  
+   ( ) 3 – 6 months ago  
+   ( ) 7 – 12 months ago  
+   ( ) 1 – 2 years ago  
+   ( ) More than 2 years ago  
 
-4. What were the **main** reasons you paused or left? *(Select up to three)*
-- [ ] Class types / formats didn’t suit me  
-- [ ] Cost of membership  
-- [ ] Facility cleanliness or equipment  
-- [ ] Gym atmosphere / culture  
-- [ ] Injury / health condition  
-- [ ] Felt unfit / intimidated by classes  
-- [ ] Moved away from the area  
-- [ ] Other commitments took priority  
-- [ ] Prefer training elsewhere  
-- [ ] Timetable didn’t fit my schedule  
-- [ ] Other (please specify): _________  
+2. **What is your current membership status?**
+_(Choose one)_
+   ( ) Membership cancelled  
+   ( ) Membership paused / on hold  
 
-5. Where do you mainly train now? *(Choose one)*
-( ) Another functional-fitness gym  
-( ) Commercial / chain gym  
-( ) Home workouts / online  
-( ) I’m not training at the moment  
-( ) Other: _________  
+3. **How likely are you to return to TFE?**
+_(Choose one)_
+   ( ) Actively planning to return  
+   ( ) Considering a return  
+   ( ) Unlikely to return  
 
-6. What would encourage you to return to TFE in the future?  
-*(If nothing specific comes to mind, feel free to leave blank.)*  
-[Free text]
+4. **What were the *main* reasons you paused or left?**
+_(Select up to three)_
+   - [ ] Class types / formats didn’t suit me  
+   - [ ] Cost of membership  
+   - [ ] Facility cleanliness or equipment  
+   - [ ] Gym atmosphere / culture  
+   - [ ] Injury / health condition  
+   - [ ] Felt unfit / intimidated by classes  
+   - [ ] Moved away from the area  
+   - [ ] Other commitments took priority  
+   - [ ] Prefer training elsewhere  
+   - [ ] Timetable didn’t fit my schedule  
+   - [ ] Other (please specify): _________  
 
-7. If you decided to return, how likely are you to rejoin in the next 6 months? *(Choose one)*
-( ) Very unlikely ( ) Unlikely ( ) Neutral ( ) Likely ( ) Very likely  
+5. **Where do you mainly train now?**
+_(Choose one)_
+   ( ) Another functional-fitness gym  
+   ( ) Commercial / chain gym  
+   ( ) Home workouts / online  
+   ( ) I’m not training at the moment  
+   ( ) Other: _________  
 
-8. What could we do differently to make your experience better?  
+6. **What would encourage you to return to TFE in the future?**
+_(If nothing specific comes to mind, feel free to leave blank.)_
+   [Free text]
+
+7. **If you decided to return, how likely are you to rejoin in the next 6 months?**
+_(Choose one)_
+   ( ) Very unlikely
+   ( ) Unlikely
+   ( ) Neutral
+   ( ) Likely
+   ( ) Very likely  
+
+8. **What could we do differently to make your experience better?**
 _Select any prompt that sparks ideas, or write your own thoughts._  
 Timetable changes / Pricing / Facility upgrades / Community events / Other  
-[Free text]
+   [Free text]
 
 
-## Your Past Attendance Style *(Previous members only)*  
-_Think back to the **last month you were active at TFE**…_
+---
 
-1. **About how many sessions did you attend per week?**  *(Choose one)*  
+
+## P3. Your Past Attendance Style *(Previous members only)*  
+
+_Think back to the **last month you were active** at TFE_
+
+1. **About how many sessions did you attend per week?**
+*(Choose one)*  
    ( ) 5 + sessions (most days)  
    ( ) 3 – 4 sessions  
    ( ) 1 – 2 sessions  
    ( ) A few sessions per month  
    ( ) I attended infrequently / drop-in only  
 
-2. **Which best describes when you usually attended?**  *(Choose one)*  
+2. **Which best describes when you usually attended?** 
+*(Choose one)*  
    ( ) Same time slots on the same days each week  
    ( ) Varying time slots, but every week  
    ( ) I attended when I could—no set pattern  
 
-3. **How consistent was your attendance overall?**  *(Choose one)*  
+3. **How consistent was your attendance overall?**
+*(Choose one)*  
    ( ) Very consistent – same number & timing each week  
    ( ) Somewhat consistent – small variations week to week  
    ( ) Inconsistent – number of visits and timing varied a lot  
 
 
+---
 
-## Your Attendance Style *(Current members only)*  
+
+## C2. Your Attendance Style *(Current members only)*  
+
 _In the last **4 weeks**…_
 
-_These questions only show because you’re an active member._
-
-1. **About how many sessions have you attended per week?**  *(Choose one)*  
+1. **About how many sessions have you attended per week?**
+*(Choose one)*  
    ( ) 5 + sessions (most days)  
    ( ) 3 – 4 sessions  
    ( ) 1 – 2 sessions  
    ( ) A few sessions per month  
    ( ) I haven’t trained at TFE in the last 4 weeks  
 
-2. **Which best describes when you usually attend?**  *(Choose one)*  
+2. **Which best describes when you usually attend?**
+*(Choose one)*
    ( ) Same time slots on the same days each week  
    ( ) Varying time slots, but every week  
    ( ) I attend when I can—no set pattern  
 
-3. **How consistent is your attendance overall?**  *(Choose one)*  
+3. **How consistent is your attendance overall?**
+*(Choose one)*
    ( ) Very consistent – same number & timing each week  
    ( ) Somewhat consistent – small variations week to week  
    ( ) Inconsistent – number of visits and timing vary a lot  
 
 
-## Your First 3 Months at TFE *(New members — joined within the last 3 months)*
+---
 
-_These questions only appear if you joined within the last three months._
 
-1. **How smooth has your onboarding felt so far?**  
-   ( ) 1 Very Difficult ( ) 2 ( ) 3 ( ) 4 ( ) 5 Very Smooth  
+## N1. Your First 3 Months at TFE *(New members — joined within the last 3 months)*
 
-2. **Which of these caused friction in your first month?** *Select up to three*  
+_As a new member to TFE…_
+
+1. **How smooth has your onboarding felt so far?** 
+*(Choose one)* 
+   ( ) 1 Very Difficult 
+   ( ) 2 
+   ( ) 3 
+   ( ) 4 
+   ( ) 5 Very Smooth  
+
+2. **Which of these caused friction in your first month?**
+_(Select up to three)_
    - [ ] Booking app navigation  
    - [ ] Understanding class types  
    - [ ] Knowing what weight or intensity to use  
@@ -143,16 +193,23 @@ _These questions only appear if you joined within the last three months._
    - [ ] Other (please specify): _________  
 
 3. **Have you attended a Foundations / Fundamentals session?**  
-   ( ) Yes ( ) Not yet but plan to ( ) Didn't know about it  
+*(Choose one)* 
+   ( ) Yes
+   ( ) Not yet but plan to
+   ( ) Didn't know about it  
 
-4. **What’s one thing that would have made your first few weeks easier?** (Optional)  
+4. **What’s one thing that would have made your first few weeks easier?**
    [Free text]
 
 
-## Motivation Barriers *(All members)*  
+---
+
+
+## A1. Motivation Barriers *(All members)*  
 
 Please tell us the main things that sometimes keep or kept you from getting to TFE. Select **up to three** that feel most relevant right now.
 
+_(Select up to three)_
 - [ ] Child-care responsibilities  
 - [ ] Classes often fully booked  
 - [ ] Confidence about ability or fitness level  
@@ -167,7 +224,7 @@ Please tell us the main things that sometimes keep or kept you from getting to T
 - [ ] Other: _________  
 
 _If you selected more than one, which is your **single biggest** barrier?_  
-[Free text]
+   [Free text]
 
 
 ---
