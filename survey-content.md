@@ -2,20 +2,21 @@
 
 Questions are labelled as follows:
 
-Ax = all member questions
-Cx = current member questions
-Nx = new member questions 
-Px = previous member questions
+Ax = all member questions (all members, past and present)
+Cx = current member questions (active membership)
+Nx = new member questions (joined within the last 3 months)
+Px = previous member questions (either paused or cancelled membership)
 
-Depending on the target member, you'd be targetted the appropriate questions. 
+Depending on the target member, they would be targetted the appropriate group of questions. 
 
 e.g. a new member would see A + C + N while a previous member would see A + P
 
 
----
+---   <!-- Section break -->
 
 
-## P1. Welcome *(Previous members only)*
+## P1. Welcome 
+*(Previous members only)*
 
 **Thank you for being part of TFE in the past.** We understand circumstances change, and we truly appreciate the time you trained with us.
 
@@ -28,10 +29,11 @@ All responses are anonymous and processed in line with GDPR. **There are no righ
 Click **Next** to begin.
 
 
----
+---   <!-- Section break -->
 
 
-## C1. Welcome *(Current members only)*
+## C1. Welcomee
+*(Current members only)*
 
 **Thank you for being part of the TFE community.**  
 Your feedback helps us fine-tune our **class timetable, facilities, pricing, and member services** so they work better for you.
@@ -45,10 +47,11 @@ All responses are anonymous and handled under GDPR. **There are no right or wron
 Click **Next** to begin.
 
 
----
+---   <!-- Section break -->
 
 
-## P2. Understanding Your Membership Pause or Cancellation *(Previous members only)*
+## P2. Understanding Your Membership Pause or Cancellation 
+*(Previous members only)*
 
 _We’d like to understand when you left, why you left, and what (if anything) might bring you back. All responses are anonymous._
 
@@ -111,10 +114,11 @@ Timetable changes / Pricing / Facility upgrades / Community events / Other
    [Free text]
 
 
----
+---   <!-- Section break -->
 
 
-## P3. Your Past Attendance Style *(Previous members only)*  
+## P3. Your Past Attendance Style 
+*(Previous members only)*  
 
 _Think back to the **last month you were active** at TFE_
 
@@ -139,10 +143,11 @@ _Think back to the **last month you were active** at TFE_
    ( ) Inconsistent – number of visits and timing varied a lot  
 
 
----
+---   <!-- Section break -->
 
 
-## C2. Your Attendance Style *(Current members only)*  
+## C2. Your Attendance Style 
+*(Current members only)*  
 
 _In the last **4 weeks**…_
 
@@ -167,12 +172,13 @@ _In the last **4 weeks**…_
    ( ) Inconsistent – number of visits and timing vary a lot  
 
 
----
+---   <!-- Section break -->
 
 
-## N1. Your First 3 Months at TFE *(New members — joined within the last 3 months)*
+## N1. Your First 3 Months at TFE 
+*(New members)*
 
-_As a new member to TFE…_
+_As a new member (joined in the last 3 months) to TFE…_
 
 1. **How smooth has your onboarding felt so far?** 
 *(Choose one)* 
@@ -202,10 +208,11 @@ _(Select up to three)_
    [Free text]
 
 
----
+---   <!-- Section break -->
 
 
-## A1. Motivation Barriers *(All members)*  
+## A1. Motivation Barriers 
+*(All members)*  
 
 Please tell us the main things that sometimes keep or kept you from getting to TFE. Select **up to three** that feel most relevant right now.
 
@@ -227,12 +234,14 @@ _If you selected more than one, which is your **single biggest** barrier?_
    [Free text]
 
 
----
+---   <!-- Section break -->
 
 
-## Class Preferences - Enjoyment: Old vs New *(Current members only)*
-In this section, you'll be able to compare the classes you've tried from both the old and new timetables.  
-For each class type, please rate how much you enjoyed the older version and the newer version (if you've tried both). Select **N/A** if you haven't attended a version.
+## Class Preferences - Enjoyment: Old vs New 
+*(Current members only)*
+
+_In this section, you'll be able to compare the classes you've tried from both the old and new timetables.  
+For each class type, please rate how much you enjoyed the older version and the newer version (if you've tried both). Select **N/A** if you haven't attended a version._
 
 ### Groupings
    - Bootcamps (Cardio, Strength, Hybrid, MST)  
@@ -242,8 +251,12 @@ For each class type, please rate how much you enjoyed the older version and the 
    - Recovery & Boxing  
 
 Anything else you’d like us to know about classes? (Optional, Max 140 char)
+   [Free text]
 
-## Class Preferences (2/3) — Interest: Bootcamps & Strength *(Current members only)*
+
+## Class Preferences (2/3) — Interest: Bootcamps & Strength
+*(Current members only)*
+
 Rate your Interest in each class (1 = Not Interested, 5 = Very Interested).
 
 ### Old format
@@ -283,9 +296,11 @@ Notable Bootcamp classes
 
 Anything else you’d like us to know about classes? (Optional, Max 140 char)
 
+
 ## Quick Mood Check *(Current members only)*
 On a scale of 1 😒 (Very Tired) to 5 😃 (Very Energised), how do you usually feel at the end of a typical TFE session?
    ( ) 1 😒   ( ) 2   ( ) 3 😐   ( ) 4   ( ) 5 😃
+
 
 ## Class Preferences (3/3) — Interest: Technique, Performance & Recovery *(Current members only)*
 Rate your interest in each class (1 = Not interested, 5 = Very interested).
@@ -316,10 +331,14 @@ Anything else you’d like us to know about classes? (Optional, Max 140 char)
    ( ) BoxFit   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
    ( ) Recovery ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
 
- 
-## Goal Alignment *(Current members only)*
 
-**Which class types feel most effective for *your* current fitness goals?**  
+---   <!-- Section break -->
+
+
+## Goal Alignment 
+*(Current members only)*
+
+1. **Which class types feel most effective for *your* current fitness goals?**  
 _Select up to three._  
 - [ ] Bootcamp‑Cardio  
 - [ ] Bootcamp‑Strength / MST  
@@ -339,9 +358,12 @@ _Select up to three._
 - [ ] Other (please specify): _________
 
 
+---   <!-- Section break -->
+
+
 ## Coach Quality & Style *(Current members only)*
 
-Our coaches each bring a unique style to their sessions. We'd like your feedback on how you experience their coaching.
+_Our coaches each bring a unique style to their sessions. We'd like your feedback on how you experience their coaching._
 
 **Please answer candidly; there are no bad scores—only honest ones.**
 
@@ -360,24 +382,33 @@ How likely are you to recommend TFE’s coaching to a friend or family member?
 ( ) 0 ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5 ( ) 6 ( ) 7 ( ) 8 ( ) 9 ( ) 10
 
 Optional: If you'd like to share any comments about a specific coach, feel free to add them below.
+   [Free Text]
 
-## Open Gym & Personal Training *(Current members only)*
 
-TFE is primarily a class-based gym, but some members also use Open Gym for independent workouts, such as practicing specific lifts or cardio routines, or Personal Training for tailored coaching to achieve their unique fitness goals.
+---   <!-- Section break -->
 
-Do you use Open Gym for independent training?
-   ( ) Yes    ( ) regularly
+
+## Open Gym & Personal Training 
+*(Current members only)*
+
+_TFE is primarily a class-based gym, but some members also use Open Gym for independent workouts, such as practicing specific lifts or cardio routines, or Personal Training for tailored coaching to achieve their unique fitness goals._
+
+1. **Do you use Open Gym for independent training?**
+*(Choose one)* 
+   ( ) Regularly
    ( ) Occasionally
    ( ) I did in the past but not right now
    ( ) No
 
-Do you use 1:1 Personal Training sessions at TFE?
-   ( ) Yes    ( ) regularly
+2. **Do you use 1:1 Personal Training sessions at TFE?**
+*(Choose one)* 
+   ( ) Regularly
    ( ) Occasionally
    ( ) I did in the past but not right now
    ( ) No
 
-**Which time slot would you be most likely to use Open Gym?** (Choose all that apply)
+3. **Which time slot would you be most likely to use Open Gym?**
+*(Choose all that apply)* 
    ( ) Early Morning (06:00–09:00)
    ( ) Mid‑Morning (09:00–12:00)
    ( ) Lunchtime (12:00–14:00)
@@ -389,7 +420,13 @@ Do you use 1:1 Personal Training sessions at TFE?
 **Optional: Please share any suggestions for improving the accessibility or usefulness of Open Gym or Personal Training options.**
    [Free text]
 
-## Design Your Perfect TFE Week *(Current members only)*
+
+---   <!-- Section break -->
+
+
+## Design Your Perfect TFE Week 
+*(Current members only)*
+
 Give us your ideal training blueprint by choosing the session type you’d most like to attend in each time-slot. Fill as many or as few slots as you wish—multiple sessions per day are totally fine if that matches your rhythm.
 
 ### Session Categories
@@ -422,7 +459,7 @@ _There are no wrong answers—focus on what would genuinely help you feel strong
 
 ## Recovery & Well‑being Resources *(Current members only)*
 Which of these additional resources would you be likely to use if offered? (Select all that apply)
-Sports massage / physiotherapy  
+   ( ) Sports massage / physiotherapy  
 Guided mobility or stretch classes  
 Meditation or breath‑work sessions  
 Nutrition clinic / consultation  
@@ -430,11 +467,16 @@ Sleep‑optimisation workshops
 Other: _________
 
 
-## Timetable Navigation Experience *(Current members only)*
+---   <!-- Section break -->
 
-We want to know how easy or difficult it is to navigate the class timetable.
 
-How would you describe your experience with understanding and navigating the current timetable? (Required)
+## Timetable Navigation Experience
+*(Current members only)*
+
+_We want to know how easy or difficult it is to navigate the class timetable._
+
+1. **How would you describe your experience with understanding and navigating the current timetable?**
+*(Choose one)* 
    ( ) Very difficult
    ( ) Difficult
    ( ) Neutral
@@ -442,11 +484,16 @@ How would you describe your experience with understanding and navigating the cur
    ( ) Very easy
    ( ) I don't know enough to rate
 
-Optional: What, if anything, do you find confusing or challenging about the timetable?
+2. **What, if anything, do you find confusing or challenging about the timetable?**
 Share specific feedback to help us improve the timetable's structure and presentation.
+   [Free text]
 
 
-### Booking & Capacity *(Current members only)*
+---   <!-- Section break -->
+
+
+## Booking & Capacity
+*(Current members only)*
 
 1. **Over the last 4 weeks, how often did you fail to book a desired class because it was already full?**  
    ( ) Never  
@@ -460,17 +507,25 @@ Share specific feedback to help us improve the timetable's structure and present
    ( ) They feel **too high** – sessions sometimes feel overcrowded
 
 
-## Your Experience of the New Timetable *(Current members only)*
+---   <!-- Section break -->
 
-We've shifted from a simpler rotating bootcamp-style timetable to a more varied class timetable, which now includes specialized sessions like strength training, skill-building, and performance-focused classes.
 
-Which overall approach do you prefer? (Required)
+## Your Experience of the New Timetable 
+*(Current members only)*
+
+_We've shifted from a simpler rotating bootcamp-style timetable to a more varied class timetable, which now includes specialized sessions like strength training, skill-building, and performance-focused classes._
+
+1. **Which overall approach do you prefer?**
    ( ) I prefer the previous simpler rotating timetable
    ( ) I prefer the current varied and specific class timetable
    ( ) I would prefer a balance of both
    ( ) I have no strong preference
 
-Optional: We’d love to hear why you prefer that option or any suggestions for achieving an ideal balance.
+2. **We’d love to hear why you prefer that option or any suggestions for achieving an ideal balance.**
+   [Free text]
+
+
+---   <!-- Section break -->
 
 
 ## Parking & Outdoor Areas *(All members)*
@@ -483,39 +538,47 @@ How often do you have difficulty finding parking at TFE? (1 = Always, 5 = Never)
 Optional: Please share any comments about the car park, outdoor environment, or suggestions for improvement.
 
 
+---   <!-- Section break -->
+
+
 ## Facilities, Communication & Niggles *(All members)*
 
-**Please answer candidly; there are no bad scores—only honest ones.**
-
-Rate the following areas (select one number for each). 1 = Poor, 5 = Excellent
+1. Rate the following areas (select one number for each). 1 = Poor, 5 = Excellent
 
    ( ) Equipment availability      		( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
    ( ) Cleanliness                 		( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
-   ( ) **Row clarity check**   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
    ( ) Class environment           		( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
-   ( ) Communication effectiveness 	( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
+   ( ) Communication effectiveness 	   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
 
-Is there anything you'd like to flag?	(Optional)
-   ( ) Facility niggles / quick fixes: 	[Free text]
+2. Is there anything you'd like to flag?
+   ( ) Facility niggles / quick fixes:       [Free text]
    ( ) Suggestions to improve communication: [Free text]
 
 
+---   <!-- Section break -->
+
+
 ## Pricing & Value Perception *(All members)*
-How fair do you feel our current pricing is for what you receive?  
-   ( ) 1 Very Unfair   ( ) 2   ( ) 3 Neutral   ( ) 4   ( ) 5 Very Fair
+
+1. **How fair do you feel our current pricing is for what you receive?**
+*(Choose one)* 
+   ( ) 1 Very Unfair
+   ( ) 2   
+   ( ) 3 Neutral   
+   ( ) 4   
+   ( ) 5 Very Fair
+
+2. **If our monthly membership fee were to increase, at what point would you seriously consider cancelling?**
+*(Choose one)* 
+   ( ) I would likely leave with **any** price increase  
+   ( ) I would stay if prices rose by **up to 5 %** (≈ +£5 / month)  
+   ( ) I would stay if prices rose by **up to 10 %** (≈ +£10 / month)  
+   ( ) I would stay if prices rose by **up to 15 %** (≈ +£15 / month)  
+   ( ) I would stay if prices rose by **up to 20 %** (≈ +£20 / month)  
+   ( ) I would stay even if prices rose by **more than 20 %**
 
 
-**Price Elasticity**
-
-If our monthly membership fee were to increase, at what point would you seriously consider cancelling?  
-_Select the single option that best reflects your threshold._
-
-( ) I would likely leave with **any** price increase  
-( ) I would stay if prices rose by **up to 5 %** (≈ +£5 / month)  
-( ) I would stay if prices rose by **up to 10 %** (≈ +£10 / month)  
-( ) I would stay if prices rose by **up to 15 %** (≈ +£15 / month)  
-( ) I would stay if prices rose by **up to 20 %** (≈ +£20 / month)  
-( ) I would stay even if prices rose by **more than 20 %**
+---   <!-- Section break -->
 
 
 ### Preferred Communication Channels (Choose up to 2)
@@ -525,6 +588,10 @@ _Select the single option that best reflects your threshold._
    ( ) Push notifications via GloFox app  
    ( ) WhatsApp broadcast list  
    ( ) Other: _________
+
+
+---   <!-- Section break -->
+
 
 ## Community & Belonging *(All members)*
 
@@ -548,12 +615,18 @@ Please indicate how much you agree with the following statement:
 “I feel welcomed and respected at TFE regardless of my background.”  
    ( ) 1 Strongly Disagree   ( ) 2   ( ) 3 Neutral   ( ) 4   ( ) 5 Strongly Agree
 
+
+---   <!-- Section break -->
+
+
 ## Participant Profile *(All members)*
 
-What is your age group? (Required)
+1. **What is your age group?**
+*(Choose one)* 
    ( ) 16–24   ( ) 25–34   ( ) 35–44   ( ) 45–54   ( ) 55–64   ( ) 65+
 
-What is your gender? (Optional)
+2. **What is your gender?**
+*(Choose one)* 
    ( ) Man
    ( ) Woman
    ( ) Non‑binary
@@ -562,12 +635,21 @@ What is your gender? (Optional)
 
    ( ) I have a condition or disability that affects how I train (Optional)
 
-How long have you been a member? (Required)
-   ( ) Less than 1 month   ( ) 1–3 months   ( ) 4–11 months   ( ) 1–2 years
-   ( ) 3–5 years   ( ) 6–8 years   ( ) 9+ years (Founding Member)
+3. **How long have you been a member? (Required)**
+*(Choose one)* 
+   ( ) Less than 1 month   
+   ( ) 1–3 months   
+   ( ) 4–11 months   
+   ( ) 1–2 years
+   ( ) 3–5 years   
+   ( ) 6–7 years   
+   ( ) 8+ years (Founding Member)
 
-## Additional Questions for Current Members Only
-### Loyalty & Motivation
+
+---   <!-- Section break -->
+
+
+## Loyalty & Motivation
 
 **There are no right or wrong answers—please respond honestly and intuitively.**
 
