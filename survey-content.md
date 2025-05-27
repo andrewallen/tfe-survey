@@ -26,6 +26,9 @@ This optional survey takes **about 5 – 8 minutes** and contains both required 
 
 All responses are anonymous and processed in line with GDPR. **There are no right or wrong answers—please be candid.**
 
+I consent to my data being processed:
+   - [ ] Yes
+
 Click **Next** to begin.
 
 
@@ -43,6 +46,9 @@ The survey mixes required and optional questions and takes **about 7 – 12 minu
 **Why this matters:** Leadership will use your answers to make concrete decisions, and we’ll publish the aggregated results to every member in **July** so you can see the impact.
 
 All responses are anonymous and handled under GDPR. **There are no right or wrong answers—please be completely candid.**
+
+I consent to my data being processed:
+   - [ ] Yes
 
 Click **Next** to begin.
 
@@ -86,7 +92,8 @@ _(Select up to three)_
    - [ ] Other commitments took priority  
    - [ ] Prefer training elsewhere  
    - [ ] Timetable didn’t fit my schedule  
-   - [ ] Other (please specify): _________  
+   - [ ] Other (please specify):
+   [Free Text]
 
 5. **Where do you mainly train now?**
 _(Choose one)_
@@ -109,8 +116,7 @@ _(Choose one)_
    ( ) Very likely  
 
 8. **What could we do differently to make your experience better?**
-_Select any prompt that sparks ideas, or write your own thoughts._  
-Timetable changes / Pricing / Facility upgrades / Community events / Other  
+_(If nothing specific comes to mind, feel free to leave blank.)_
    [Free text]
 
 
@@ -123,7 +129,7 @@ Timetable changes / Pricing / Facility upgrades / Community events / Other
 _Think back to the **last month you were active** at TFE_
 
 1. **About how many sessions did you attend per week?**
-*(Choose one)*  
+_(Choose one)_
    ( ) 5 + sessions (most days)  
    ( ) 3 – 4 sessions  
    ( ) 1 – 2 sessions  
@@ -131,13 +137,13 @@ _Think back to the **last month you were active** at TFE_
    ( ) I attended infrequently / drop-in only  
 
 2. **Which best describes when you usually attended?** 
-*(Choose one)*  
+_(Choose one)_
    ( ) Same time slots on the same days each week  
    ( ) Varying time slots, but every week  
    ( ) I attended when I could—no set pattern  
 
 3. **How consistent was your attendance overall?**
-*(Choose one)*  
+_(Choose one)_
    ( ) Very consistent – same number & timing each week  
    ( ) Somewhat consistent – small variations week to week  
    ( ) Inconsistent – number of visits and timing varied a lot  
@@ -152,7 +158,7 @@ _Think back to the **last month you were active** at TFE_
 _In the last **4 weeks**…_
 
 1. **About how many sessions have you attended per week?**
-*(Choose one)*  
+_(Choose one)_
    ( ) 5 + sessions (most days)  
    ( ) 3 – 4 sessions  
    ( ) 1 – 2 sessions  
@@ -160,13 +166,13 @@ _In the last **4 weeks**…_
    ( ) I haven’t trained at TFE in the last 4 weeks  
 
 2. **Which best describes when you usually attend?**
-*(Choose one)*
+_(Choose one)_
    ( ) Same time slots on the same days each week  
    ( ) Varying time slots, but every week  
    ( ) I attend when I can—no set pattern  
 
 3. **How consistent is your attendance overall?**
-*(Choose one)*
+_(Choose one)_
    ( ) Very consistent – same number & timing each week  
    ( ) Somewhat consistent – small variations week to week  
    ( ) Inconsistent – number of visits and timing vary a lot  
@@ -181,7 +187,7 @@ _In the last **4 weeks**…_
 _As a new member (joined in the last 3 months) to TFE…_
 
 1. **How smooth has your onboarding felt so far?** 
-*(Choose one)* 
+_(Choose one)_
    ( ) 1 Very Difficult 
    ( ) 2 
    ( ) 3 
@@ -199,12 +205,13 @@ _(Select up to three)_
    - [ ] Other (please specify): _________  
 
 3. **Have you attended a Foundations / Fundamentals session?**  
-*(Choose one)* 
+_(Choose one)_
    ( ) Yes
    ( ) Not yet but plan to
    ( ) Didn't know about it  
 
 4. **What’s one thing that would have made your first few weeks easier?**
+_(If nothing specific comes to mind, feel free to leave blank.)_
    [Free text]
 
 
@@ -214,23 +221,23 @@ _(Select up to three)_
 ## A1. Motivation Barriers 
 *(All members)*  
 
-Please tell us the main things that sometimes keep or kept you from getting to TFE. Select **up to three** that feel most relevant right now.
-
+1. **Please tell us the main things that sometimes keep or kept you from getting to TFE. Select **up to three** that feel most relevant right now.**
 _(Select up to three)_
-- [ ] Child-care responsibilities  
-- [ ] Classes often fully booked  
-- [ ] Confidence about ability or fitness level  
-- [ ] Cost  
-- [ ] Health issues or injury  
-- [ ] Parking availability  
-- [ ] Transport / travel time  
-- [ ] Weather / daylight hours  
-- [ ] Work hours / shift patterns  
-- [ ] Other commitments took priority  
-- [ ] None of the above  
-- [ ] Other: _________  
+   - [ ] Child-care responsibilities  
+   - [ ] Classes often fully booked  
+   - [ ] Confidence about ability or fitness level  
+   - [ ] Cost  
+   - [ ] Health issues or injury  
+   - [ ] Parking availability  
+   - [ ] Transport / travel time  
+   - [ ] Weather / daylight hours  
+   - [ ] Work hours / shift patterns  
+   - [ ] Other commitments took priority  
+   - [ ] None of the above  
+   - [ ] Other: _________  
 
-_If you selected more than one, which is your **single biggest** barrier?_  
+2. **If you selected more than one, which is your **single biggest** barrier?**
+_(If nothing specific comes to mind, feel free to leave blank.)_
    [Free text]
 
 
@@ -251,6 +258,7 @@ For each class type, please rate how much you enjoyed the older version and the 
    - Recovery & Boxing  
 
 Anything else you’d like us to know about classes? (Optional, Max 140 char)
+_(If nothing specific comes to mind, feel free to leave blank.)_
    [Free text]
 
 
@@ -339,49 +347,84 @@ Anything else you’d like us to know about classes? (Optional, Max 140 char)
 *(Current members only)*
 
 1. **Which class types feel most effective for *your* current fitness goals?**  
-_Select up to three._  
-- [ ] Bootcamp‑Cardio  
-- [ ] Bootcamp‑Strength / MST  
-- [ ] Bootcamp‑Hybrid  
-- [ ] Build‑Full Body  
-- [ ] Build‑Upper  
-- [ ] Build‑Lower  
-- [ ] Lift‑Squat  
-- [ ] Lift‑Bench  
-- [ ] Lift‑Deadlift  
-- [ ] Metcon  
-- [ ] Hyrox  
-- [ ] Foundations / Fundamentals  
-- [ ] BoxFit  
-- [ ] Recovery & Mobility  
-- [ ] Open Gym  
-- [ ] Other (please specify): _________
+_(Select up to three)_  
+   - [ ] Bootcamp‑Cardio  
+   - [ ] Bootcamp‑Strength / MST  
+   - [ ] Bootcamp‑Hybrid  
+   - [ ] Build‑Full Body  
+   - [ ] Build‑Upper  
+   - [ ] Build‑Lower  
+   - [ ] Lift‑Squat  
+   - [ ] Lift‑Bench  
+   - [ ] Lift‑Deadlift  
+   - [ ] Metcon  
+   - [ ] Hyrox  
+   - [ ] Foundations / Fundamentals  
+   - [ ] BoxFit  
+   - [ ] Recovery & Mobility  
+   - [ ] Open Gym  
+   - [ ] Other (please specify):
+[Free text]
 
 
 ---   <!-- Section break -->
 
 
-## Coach Quality & Style *(Current members only)*
+## Coach Quality & Style 
+*(Current members only)*
 
-_Our coaches each bring a unique style to their sessions. We'd like your feedback on how you experience their coaching._
+_Our coaches each bring a unique style to their sessions. We'd like your feedback on how you experience their coaching. Please rate the coaching style and quality of the coach you train with **most** (if applicable):_
 
-**Please answer candidly; there are no bad scores—only honest ones.**
+1. **How would you describe their coaching style?**
+_(Choose one)_
+   ( ) Highly motivating  
+   ( ) Supportive and encouraging  
+   ( ) Technical and detail-focused  
+   ( ) Challenging and demanding  
+   ( ) Relaxed and laid-back  
+   ( ) Other (please specify): _________
 
-Please rate the coaching style and quality of each of the following (if applicable):
-   ( ) Milla
-   ( ) Sekhar
-   ( ) Amber
-   ( ) Jamie
-   ( ) Harlem
+2. **How clear are their explanations and demonstrations?**
+_(Choose one)_ 
+   ( ) Very clear  
+   ( ) Mostly clear  
+   ( ) Sometimes unclear  
+   ( ) Often unclear  
+   ( ) N/A
 
-Use a scale from 1 = Not a good fit to 5 = Excellent, or select N/A if you haven't trained with them.
+3. **How helpful is their feedback on your technique or performance?**
+_(Choose one)_
+   ( ) Extremely helpful  
+   ( ) Helpful  
+   ( ) Sometimes helpful  
+   ( ) Not helpful  
+   ( ) N/A
 
-**Overall TFE Coaching**
+4. **How approachable do you find this coach?**
+_(Choose one)_
+   ( ) Very approachable  
+   ( ) Approachable  
+   ( ) Neutral  
+   ( ) Unapproachable  
+   ( ) N/A
 
-How likely are you to recommend TFE’s coaching to a friend or family member?  
+5. **How would you rate the overall quality of their coaching?**  
+_(Choose one)_
+   ( ) 1 Poor  
+   ( ) 2  
+   ( ) 3 Neutral  
+   ( ) 4  
+   ( ) 5 Excellent
+
+6. **Please share any specific feedback or examples (positive or constructive):** 
+_(If nothing specific comes to mind, feel free to leave blank.)_ 
+   [Free text]
+
+7. **How likely are you to recommend TFE’s coaching to a friend or family member?**  
 ( ) 0 ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5 ( ) 6 ( ) 7 ( ) 8 ( ) 9 ( ) 10
 
-Optional: If you'd like to share any comments about a specific coach, feel free to add them below.
+8. **If you'd like to share any comments about a specific coach, feel free to add them below.**
+_(If nothing specific comes to mind, feel free to leave blank.)_
    [Free Text]
 
 
@@ -394,21 +437,21 @@ Optional: If you'd like to share any comments about a specific coach, feel free 
 _TFE is primarily a class-based gym, but some members also use Open Gym for independent workouts, such as practicing specific lifts or cardio routines, or Personal Training for tailored coaching to achieve their unique fitness goals._
 
 1. **Do you use Open Gym for independent training?**
-*(Choose one)* 
+_(Choose one)_ 
    ( ) Regularly
    ( ) Occasionally
    ( ) I did in the past but not right now
    ( ) No
 
 2. **Do you use 1:1 Personal Training sessions at TFE?**
-*(Choose one)* 
+_(Choose one)_ 
    ( ) Regularly
    ( ) Occasionally
    ( ) I did in the past but not right now
    ( ) No
 
 3. **Which time slot would you be most likely to use Open Gym?**
-*(Choose all that apply)* 
+_(Choose all that apply)_ 
    ( ) Early Morning (06:00–09:00)
    ( ) Mid‑Morning (09:00–12:00)
    ( ) Lunchtime (12:00–14:00)
@@ -417,7 +460,8 @@ _TFE is primarily a class-based gym, but some members also use Open Gym for inde
    ( ) Weekend
    ( ) Not Sure
 
-**Optional: Please share any suggestions for improving the accessibility or usefulness of Open Gym or Personal Training options.**
+4. **Please share any suggestions for improving the accessibility or usefulness of Open Gym or Personal Training options.**
+_(If nothing specific comes to mind, feel free to leave blank.)_
    [Free text]
 
 
@@ -476,7 +520,7 @@ Other: _________
 _We want to know how easy or difficult it is to navigate the class timetable._
 
 1. **How would you describe your experience with understanding and navigating the current timetable?**
-*(Choose one)* 
+_(Choose one)_ 
    ( ) Very difficult
    ( ) Difficult
    ( ) Neutral
@@ -486,6 +530,7 @@ _We want to know how easy or difficult it is to navigate the class timetable._
 
 2. **What, if anything, do you find confusing or challenging about the timetable?**
 Share specific feedback to help us improve the timetable's structure and presentation.
+_(If nothing specific comes to mind, feel free to leave blank.)_
    [Free text]
 
 
@@ -495,13 +540,15 @@ Share specific feedback to help us improve the timetable's structure and present
 ## Booking & Capacity
 *(Current members only)*
 
-1. **Over the last 4 weeks, how often did you fail to book a desired class because it was already full?**  
+1. **Over the last 4 weeks, how often did you fail to book a desired class because it was already full?**
+_(Choose one)_  
    ( ) Never  
    ( ) 1–2 times  
    ( ) 3–5 times  
    ( ) 6 + times  
 
-2. **How do you feel about the current class capacity limits?**  
+2. **How do you feel about the current class capacity limits?**
+_(Choose one)_
    ( ) They feel **too low** – sessions fill up before I can book  
    ( ) **About right** – I usually get a spot and the studio feels comfortable  
    ( ) They feel **too high** – sessions sometimes feel overcrowded
@@ -516,12 +563,14 @@ Share specific feedback to help us improve the timetable's structure and present
 _We've shifted from a simpler rotating bootcamp-style timetable to a more varied class timetable, which now includes specialized sessions like strength training, skill-building, and performance-focused classes._
 
 1. **Which overall approach do you prefer?**
+_(Choose one)_
    ( ) I prefer the previous simpler rotating timetable
    ( ) I prefer the current varied and specific class timetable
    ( ) I would prefer a balance of both
    ( ) I have no strong preference
 
 2. **We’d love to hear why you prefer that option or any suggestions for achieving an ideal balance.**
+_(If nothing specific comes to mind, feel free to leave blank.)_
    [Free text]
 
 
@@ -544,7 +593,6 @@ Optional: Please share any comments about the car park, outdoor environment, or 
 ## Facilities, Communication & Niggles *(All members)*
 
 1. Rate the following areas (select one number for each). 1 = Poor, 5 = Excellent
-
    ( ) Equipment availability      		( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
    ( ) Cleanliness                 		( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
    ( ) Class environment           		( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
@@ -561,7 +609,7 @@ Optional: Please share any comments about the car park, outdoor environment, or 
 ## Pricing & Value Perception *(All members)*
 
 1. **How fair do you feel our current pricing is for what you receive?**
-*(Choose one)* 
+_(Choose one)_ 
    ( ) 1 Very Unfair
    ( ) 2   
    ( ) 3 Neutral   
@@ -569,7 +617,7 @@ Optional: Please share any comments about the car park, outdoor environment, or 
    ( ) 5 Very Fair
 
 2. **If our monthly membership fee were to increase, at what point would you seriously consider cancelling?**
-*(Choose one)* 
+_(Choose one)_ 
    ( ) I would likely leave with **any** price increase  
    ( ) I would stay if prices rose by **up to 5 %** (≈ +£5 / month)  
    ( ) I would stay if prices rose by **up to 10 %** (≈ +£10 / month)  
@@ -597,11 +645,16 @@ Optional: Please share any comments about the car park, outdoor environment, or 
 
 **Sense of Belonging**
 
-“I feel a strong sense of belonging at TFE.”  
-( ) 1 Strongly disagree   ( ) 2   ( ) 3 Neutral   ( ) 4   ( ) 5 Strongly agree  
+1. **“I feel a strong sense of belonging at TFE.”**
+_(Choose one)_ 
+   ( ) 1 Strongly disagree
+   ( ) 2   
+   ( ) 3 Neutral   
+   ( ) 4   
+   ( ) 5 Strongly agree  
 
-**Community Events Interest**  
-_Which of the following community activities would you be interested in? Select all that apply._  
+2. **Which of the following community activities would you be interested in?**
+_(Select all that apply)_  
 - [ ] In‑house fitness competitions / throw‑downs  
 - [ ] Charity workout events  
 - [ ] Social gatherings (coffee mornings, BBQs, nights out)  
