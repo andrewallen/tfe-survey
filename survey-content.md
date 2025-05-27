@@ -7,7 +7,7 @@
 
 This optional survey takes **about 5 – 8 minutes** and contains both required and optional questions.
 
-**Why bother?** Your honest insights will help us improve class formats, schedules, and facilities for current and future members—and may shape changes you’d value if you ever decide to return. We’ll share aggregated findings with the whole community in **July**.
+**Why this matters:** Your honest insights will help us improve class formats, schedules, and facilities for current and future members—and may shape changes you’d value if you ever decide to return. We’ll share aggregated findings with the whole community in **July**.
 
 All responses are anonymous and processed in line with GDPR. **There are no right or wrong answers—please be candid.**
 
@@ -21,7 +21,7 @@ Your feedback helps us fine-tune our **class timetable, facilities, pricing, and
 
 The survey mixes required and optional questions and takes **about 7 – 12 minutes** (up to 20 if you leave lots of comments).
 
-**Why bother?** Leadership will use your answers to make concrete decisions, and we’ll publish the aggregated results to every member in **July** so you can see the impact.
+**Why this matters:** Leadership will use your answers to make concrete decisions, and we’ll publish the aggregated results to every member in **July** so you can see the impact.
 
 All responses are anonymous and handled under GDPR. **There are no right or wrong answers—please be completely candid.**
 
@@ -101,6 +101,7 @@ _Think back to the **last month you were active at TFE**…_
    ( ) Inconsistent – number of visits and timing varied a lot  
 
 
+
 ## Your Attendance Style *(Current members only)*  
 _In the last **4 weeks**…_
 
@@ -122,6 +123,29 @@ _These questions only show because you’re an active member._
    ( ) Very consistent – same number & timing each week  
    ( ) Somewhat consistent – small variations week to week  
    ( ) Inconsistent – number of visits and timing vary a lot  
+
+
+## Your First 3 Months at TFE *(New members — joined within the last 3 months)*
+
+_These questions only appear if you joined within the last three months._
+
+1. **How smooth has your onboarding felt so far?**  
+   ( ) 1 Very Difficult ( ) 2 ( ) 3 ( ) 4 ( ) 5 Very Smooth  
+
+2. **Which of these caused friction in your first month?** *Select up to three*  
+   - [ ] Booking app navigation  
+   - [ ] Understanding class types  
+   - [ ] Knowing what weight or intensity to use  
+   - [ ] Fitting sessions around other commitments  
+   - [ ] Feeling part of the community  
+   - [ ] Confidence in technique  
+   - [ ] Other (please specify): _________  
+
+3. **Have you attended a Foundations / Fundamentals session?**  
+   ( ) Yes ( ) Not yet but plan to ( ) Didn't know about it  
+
+4. **What’s one thing that would have made your first few weeks easier?** (Optional)  
+   [Free text]
 
 
 ## Motivation Barriers *(All members)*  
@@ -234,6 +258,28 @@ Anything else you’d like us to know about classes? (Optional, Max 140 char)
    ( ) BoxFit   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
    ( ) Recovery ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
 
+ 
+## Goal Alignment *(Current members only)*
+
+**Which class types feel most effective for *your* current fitness goals?**  
+_Select up to three._  
+- [ ] Bootcamp‑Cardio  
+- [ ] Bootcamp‑Strength / MST  
+- [ ] Bootcamp‑Hybrid  
+- [ ] Build‑Full Body  
+- [ ] Build‑Upper  
+- [ ] Build‑Lower  
+- [ ] Lift‑Squat  
+- [ ] Lift‑Bench  
+- [ ] Lift‑Deadlift  
+- [ ] Metcon  
+- [ ] Hyrox  
+- [ ] Foundations / Fundamentals  
+- [ ] BoxFit  
+- [ ] Recovery & Mobility  
+- [ ] Open Gym  
+- [ ] Other (please specify): _________
+
 
 ## Coach Quality & Style *(Current members only)*
 
@@ -249,6 +295,11 @@ Please rate the coaching style and quality of each of the following (if applicab
    ( ) Harlem
 
 Use a scale from 1 = Not a good fit to 5 = Excellent, or select N/A if you haven't trained with them.
+
+**Overall TFE Coaching**
+
+How likely are you to recommend TFE’s coaching to a friend or family member?  
+( ) 0 ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5 ( ) 6 ( ) 7 ( ) 8 ( ) 9 ( ) 10
 
 Optional: If you'd like to share any comments about a specific coach, feel free to add them below.
 
@@ -320,6 +371,7 @@ Nutrition clinic / consultation
 Sleep‑optimisation workshops  
 Other: _________
 
+
 ## Timetable Navigation Experience *(Current members only)*
 
 We want to know how easy or difficult it is to navigate the class timetable.
@@ -334,6 +386,21 @@ How would you describe your experience with understanding and navigating the cur
 
 Optional: What, if anything, do you find confusing or challenging about the timetable?
 Share specific feedback to help us improve the timetable's structure and presentation.
+
+
+### Booking & Capacity *(Current members only)*
+
+1. **Over the last 4 weeks, how often did you fail to book a desired class because it was already full?**  
+   ( ) Never  
+   ( ) 1–2 times  
+   ( ) 3–5 times  
+   ( ) 6 + times  
+
+2. **How do you feel about the current class capacity limits?**  
+   ( ) They feel **too low** – sessions fill up before I can book  
+   ( ) **About right** – I usually get a spot and the studio feels comfortable  
+   ( ) They feel **too high** – sessions sometimes feel overcrowded
+
 
 ## Your Experience of the New Timetable *(Current members only)*
 
@@ -379,6 +446,20 @@ Is there anything you'd like to flag?	(Optional)
 How fair do you feel our current pricing is for what you receive?  
    ( ) 1 Very Unfair   ( ) 2   ( ) 3 Neutral   ( ) 4   ( ) 5 Very Fair
 
+
+**Price Elasticity**
+
+If our monthly membership fee were to increase, at what point would you seriously consider cancelling?  
+_Select the single option that best reflects your threshold._
+
+( ) I would likely leave with **any** price increase  
+( ) I would stay if prices rose by **up to 5 %** (≈ +£5 / month)  
+( ) I would stay if prices rose by **up to 10 %** (≈ +£10 / month)  
+( ) I would stay if prices rose by **up to 15 %** (≈ +£15 / month)  
+( ) I would stay if prices rose by **up to 20 %** (≈ +£20 / month)  
+( ) I would stay even if prices rose by **more than 20 %**
+
+
 ### Preferred Communication Channels (Choose up to 2)
    ( ) Email newsletters  
    ( ) Facebook/Instagram posts  
@@ -386,6 +467,23 @@ How fair do you feel our current pricing is for what you receive?
    ( ) Push notifications via GloFox app  
    ( ) WhatsApp broadcast list  
    ( ) Other: _________
+
+## Community & Belonging *(All members)*
+
+**Sense of Belonging**
+
+“I feel a strong sense of belonging at TFE.”  
+( ) 1 Strongly disagree   ( ) 2   ( ) 3 Neutral   ( ) 4   ( ) 5 Strongly agree  
+
+**Community Events Interest**  
+_Which of the following community activities would you be interested in? Select all that apply._  
+- [ ] In‑house fitness competitions / throw‑downs  
+- [ ] Charity workout events  
+- [ ] Social gatherings (coffee mornings, BBQs, nights out)  
+- [ ] Group fitness challenges or month‑long habit streaks  
+- [ ] Educational workshops (nutrition, mobility, mindset)  
+- [ ] Other (please specify): _________  
+
 
 ## Diversity & Inclusion Climate *(All members)*
 Please indicate how much you agree with the following statement:  
