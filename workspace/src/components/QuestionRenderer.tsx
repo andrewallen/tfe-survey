@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Question } from '../types/survey';
 import { useSurvey } from '../contexts/SurveyContext';
@@ -10,14 +10,14 @@ interface QuestionRendererProps {
 }
 
 export default function QuestionRenderer({ question }: QuestionRendererProps) {
-  const { answerQuestion, getResponse } = useSurvey();
+  const { answerQuestion, getResponse, nextQuestion } = useSurvey();
   const [selectedValue, setSelectedValue] = useState<string | string[] | number>('');
   const [textValue, setTextValue] = useState('');
 
   const existingResponse = getResponse(question.id);
   
   // Check if this question should be shown based on previous answers
-  const shouldShowQuestion = () => {
+  const shouldShowQuestion = useCallback(() => {
     // Show gender self-describe only if "Self‑describe" was selected for gender
     if (question.id === 'gender-self-describe') {
       const genderResponse = getResponse('gender');
@@ -38,10 +38,28 @@ export default function QuestionRenderer({ question }: QuestionRendererProps) {
     }
     
     return true;
-  };
+  }, [question.id, getResponse]);
+
+  // Auto-advance if this question shouldn't be shown
+  useEffect(() => {
+    if (!shouldShowQuestion()) {
+      // Small delay to prevent render loop
+      const timer = setTimeout(() => {
+        nextQuestion();
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [shouldShowQuestion, nextQuestion]);
 
   if (!shouldShowQuestion()) {
-    return null;
+    return (
+      <div className="flex items-center justify-center min-h-64">
+        <div className="text-center">
+          <div className="w-8 h-8 border-4 border-tfe-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-tfe-gray-600">Loading next question...</p>
+        </div>
+      </div>
+    );
   }
 
   useEffect(() => {

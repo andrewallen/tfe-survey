@@ -7,20 +7,16 @@ import QuestionRenderer from '../components/QuestionRenderer';
 import NavigationButtons from '../components/NavigationButtons';
 
 export default function Survey() {
-  const { state, startSurvey } = useSurvey();
+  const { state, startSurvey, getResponse, nextQuestion: contextNextQuestion } = useSurvey(); // Add getResponse and rename nextQuestion
   const navigate = useNavigate();
   const [allQuestions, setAllQuestions] = useState<Question[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
 
   useEffect(() => {
-    // Flatten all questions from all groups
     let questions = commonShellQuestions.groups.flatMap(group => group.questions);
     
-    // Filter questions based on member type if known
     if (state.user?.memberType) {
       const memberType = state.user.memberType;
-      
-      // Remove membership length question for previous members
       if (memberType === 'previous') {
         questions = questions.filter(q => q.id !== 'membership-length');
       }
@@ -29,19 +25,58 @@ export default function Survey() {
     setAllQuestions(questions);
     
     if (!state.user) {
-      // Start survey with default member type - will be updated when user answers the screener
       startSurvey('current', questions.length);
     }
-  }, [state.user?.memberType]);
+  }, [state.user?.memberType, startSurvey]);
 
   useEffect(() => {
-    if (allQuestions.length > 0 && state.currentQuestionIndex < allQuestions.length) {
-      setCurrentQuestion(allQuestions[state.currentQuestionIndex]);
-    } else if (state.currentQuestionIndex >= allQuestions.length) {
-      // Survey completed
-      navigate('/thank-you');
+    if (allQuestions.length > 0) {
+      let questionIndex = state.currentQuestionIndex;
+      let questionToShow: Question | null = allQuestions[questionIndex];
+
+      // Loop to find the next valid question to show
+      while (questionToShow && !shouldShowQuestion(questionToShow, getResponse)) {
+        // If the current question shouldn't be shown, try to advance the index in context
+        // This relies on QuestionRenderer also having logic to auto-advance if it gets a question it shouldn't show.
+        // A more robust solution might involve a dedicated function in SurveyContext to find the next valid question index.
+        if (questionIndex < allQuestions.length - 1) {
+          questionIndex++;
+          questionToShow = allQuestions[questionIndex];
+        } else {
+          questionToShow = null; // No more questions to show
+          break;
+        }
+      }
+      
+      // Update the current question in the local state
+      setCurrentQuestion(questionToShow);
+
+      if (!questionToShow && state.currentQuestionIndex < allQuestions.length) {
+        // If no question to show and we are not at the end of all potential questions, navigate to thank you
+        navigate('/thank-you');
+      } else if (!questionToShow && state.currentQuestionIndex >= allQuestions.length -1) {
+        // If no question to show and we are at or past the end, navigate to thank you
+        navigate('/thank-you');
+      }
     }
-  }, [state.currentQuestionIndex, allQuestions, navigate]);
+  }, [state.currentQuestionIndex, allQuestions, navigate, getResponse, contextNextQuestion]);
+
+  // Helper function to determine if a question should be shown
+  const shouldShowQuestion = (question: Question, getResponseFunc: (id: string) => any) => {
+    if (question.id === 'gender-self-describe') {
+      const genderResponse = getResponseFunc('gender');
+      return genderResponse?.answer === 'Self‑describe';
+    }
+    if (question.id === 'barriers-other') {
+      const barriersResponse = getResponseFunc('barriers');
+      return Array.isArray(barriersResponse?.answer) && barriersResponse.answer.includes('Other');
+    }
+    if (question.id === 'email-address') {
+      const prizeDrawResponse = getResponseFunc('prize-draw-consent');
+      return prizeDrawResponse?.answer === 'Yes, enter me in the prize draw';
+    }
+    return true;
+  };
 
   if (!state.user || !currentQuestion) {
     return (
@@ -68,7 +103,7 @@ export default function Survey() {
       </div>
 
       <QuestionRenderer question={currentQuestion} />
-      <NavigationButtons />
+      <NavigationButtons currentQuestion={currentQuestion} /> 
     </div>
   );
 }
