@@ -53,7 +53,8 @@ We’d like to understand when you left, why you left, and what (if anything) mi
 - [ ] Cost of membership  
 - [ ] Facility cleanliness or equipment  
 - [ ] Gym atmosphere / culture  
-- [ ] Injury, health or fitness reasons  
+- [ ] Injury / health condition  
+- [ ] Felt unfit / intimidated by classes  
 - [ ] Moved away from the area  
 - [ ] Other commitments took priority  
 - [ ] Prefer training elsewhere  
@@ -93,7 +94,7 @@ _Think back to the **last month you were active at TFE**…_
 2. **Which best describes when you usually attended?**  *(Choose one)*  
    ( ) Same time slots on the same days each week  
    ( ) Varying time slots, but every week  
-   ( ) I attended when I could – no real pattern  
+   ( ) I attended when I could—no set pattern  
 
 3. **How consistent was your attendance overall?**  *(Choose one)*  
    ( ) Very consistent – same number & timing each week  
@@ -117,7 +118,7 @@ _These questions only show because you’re an active member._
 2. **Which best describes when you usually attend?**  *(Choose one)*  
    ( ) Same time slots on the same days each week  
    ( ) Varying time slots, but every week  
-   ( ) I attend when I can – there’s no real pattern  
+   ( ) I attend when I can—no set pattern  
 
 3. **How consistent is your attendance overall?**  *(Choose one)*  
    ( ) Very consistent – same number & timing each week  
@@ -196,7 +197,7 @@ Core Bootcamp Types:
    - Strength ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
    - Hybrid   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5  
 
-Notible Bootcamp clases
+Notable Bootcamp classes
    - MST (Strength)
    - 1000 Rep Challenge (Hybrid)
 
@@ -377,11 +378,11 @@ Other: _________
 We want to know how easy or difficult it is to navigate the class timetable.
 
 How would you describe your experience with understanding and navigating the current timetable? (Required)
-   ( ) Very easy
-   ( ) Easy
-   ( ) Neutral
-   ( ) Difficult
    ( ) Very difficult
+   ( ) Difficult
+   ( ) Neutral
+   ( ) Easy
+   ( ) Very easy
    ( ) I don't know enough to rate
 
 Optional: What, if anything, do you find confusing or challenging about the timetable?
@@ -419,8 +420,8 @@ Optional: We’d love to hear why you prefer that option or any suggestions for 
 
 We understand that parking and outdoor space can affect your overall experience at the gym.
 
-How often do you have difficulty finding parking at TFE? (1 = Never, 5 = Always)
-   ( ) 1 Never   ( ) 2 Rarely   ( ) 3 Sometimes   ( ) 4 Often   ( ) 5 Always
+How often do you have difficulty finding parking at TFE? (1 = Always, 5 = Never)
+   ( ) 1 Always   ( ) 2 Often   ( ) 3 Sometimes   ( ) 4 Rarely   ( ) 5 Never
 
 Optional: Please share any comments about the car park, outdoor environment, or suggestions for improvement.
 
@@ -433,7 +434,7 @@ Rate the following areas (select one number for each). 1 = Poor, 5 = Excellent
 
    ( ) Equipment availability      		( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
    ( ) Cleanliness                 		( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
-   ( ) **Attention‑check — please select “4” for this row**   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
+   ( ) **Row clarity check**   ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
    ( ) Class environment           		( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
    ( ) Communication effectiveness 	( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) 5
 
@@ -499,8 +500,8 @@ What is your gender? (Optional)
    ( ) Man
    ( ) Woman
    ( ) Non‑binary
-   ( ) Self‑describe (optional): _________
    ( ) Prefer not to say
+   ( ) Self‑describe (optional): _________
 
    ( ) I have a condition or disability that affects how I train (Optional)
 
