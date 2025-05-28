@@ -1,0 +1,27 @@
+# TFE Survey App Requirements
+
+# 1. Node.js
+# Recommended version: >=18.x
+
+# 2. Install dependencies using npm or yarn
+#
+# npm install
+# or
+# yarn install
+
+# 3. All required packages are listed in package.json
+# (including React, Vite, Tailwind CSS, Framer Motion, Lucide React, etc.)
+
+# 4. To start the development server:
+# npm run dev
+
+# 5. To build for production:
+# npm run build
+
+# 6. To lint the code:
+# npm run lint
+
+# 7. To preview the production build:
+# npm run preview
+
+# For more details, see package.json and README (if available).
