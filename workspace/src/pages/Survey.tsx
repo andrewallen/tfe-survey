@@ -7,7 +7,14 @@ import QuestionRenderer from '../components/QuestionRenderer';
 import NavigationButtons from '../components/NavigationButtons';
 
 export default function Survey() {
-  const { state, startSurvey, getResponse, nextQuestion: contextNextQuestion } = useSurvey(); // Add getResponse and rename nextQuestion
+  const { 
+    state, 
+    startSurvey, 
+    getResponse, 
+    nextQuestion: contextNextQuestion,
+    previousQuestion: contextPreviousQuestion,
+    shouldShowQuestion
+  } = useSurvey();
   const navigate = useNavigate();
   const [allQuestions, setAllQuestions] = useState<Question[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
@@ -29,54 +36,77 @@ export default function Survey() {
     }
   }, [state.user?.memberType, startSurvey]);
 
+  // Custom function to find the next valid question to show
+  const findNextValidQuestion = (startIndex: number) => {
+    let index = startIndex;
+    let question = allQuestions[index];
+    
+    // Loop until a valid question is found or we run out of questions
+    while (question && !shouldShowQuestion(question)) {
+      if (index < allQuestions.length - 1) {
+        index++;
+        question = allQuestions[index];
+      } else {
+        return null; // No more valid questions
+      }
+    }
+    
+    return { index, question };
+  };
+
   useEffect(() => {
     if (allQuestions.length > 0) {
       let questionIndex = state.currentQuestionIndex;
       let questionToShow: Question | null = allQuestions[questionIndex];
-
-      // Loop to find the next valid question to show
-      while (questionToShow && !shouldShowQuestion(questionToShow, getResponse)) {
-        // If the current question shouldn't be shown, try to advance the index in context
-        // This relies on QuestionRenderer also having logic to auto-advance if it gets a question it shouldn't show.
-        // A more robust solution might involve a dedicated function in SurveyContext to find the next valid question index.
-        if (questionIndex < allQuestions.length - 1) {
-          questionIndex++;
-          questionToShow = allQuestions[questionIndex];
+      let needsToUpdateIndex = false;
+      
+      // First check if the current question should be shown
+      if (questionToShow && !shouldShowQuestion(questionToShow)) {
+        // Find the next valid question
+        const nextValid = findNextValidQuestion(questionIndex);
+        
+        if (nextValid) {
+          questionIndex = nextValid.index;
+          questionToShow = nextValid.question;
+          needsToUpdateIndex = true;
         } else {
           questionToShow = null; // No more questions to show
-          break;
+        }
+      }
+      // If the index has changed, we need to update the context's state
+      if (needsToUpdateIndex) {
+        // Calculate the difference between where we are and where we should be
+        const diff = questionIndex - state.currentQuestionIndex;
+        
+        if (diff !== 0) {
+          // Use setTimeout to avoid infinite rendering loops
+          setTimeout(() => {
+            // Update the context's question index to match our calculated index
+            if (diff > 0) {
+              // If we need to move forward
+              for (let i = 0; i < diff; i++) {
+                contextNextQuestion();
+              }
+            } else {
+              // If we need to move backward
+              for (let i = 0; i < Math.abs(diff); i++) {
+                contextPreviousQuestion();
+              }
+            }
+          }, 0);
+          return; // Return early to avoid setting currentQuestion before context is updated
         }
       }
       
       // Update the current question in the local state
       setCurrentQuestion(questionToShow);
 
-      if (!questionToShow && state.currentQuestionIndex < allQuestions.length) {
-        // If no question to show and we are not at the end of all potential questions, navigate to thank you
-        navigate('/thank-you');
-      } else if (!questionToShow && state.currentQuestionIndex >= allQuestions.length -1) {
-        // If no question to show and we are at or past the end, navigate to thank you
+      if (!questionToShow) {
+        // If there's no valid question to show, navigate to thank you
         navigate('/thank-you');
       }
     }
-  }, [state.currentQuestionIndex, allQuestions, navigate, getResponse, contextNextQuestion]);
-
-  // Helper function to determine if a question should be shown
-  const shouldShowQuestion = (question: Question, getResponseFunc: (id: string) => any) => {
-    if (question.id === 'gender-self-describe') {
-      const genderResponse = getResponseFunc('gender');
-      return genderResponse?.answer === 'Self‑describe';
-    }
-    if (question.id === 'barriers-other') {
-      const barriersResponse = getResponseFunc('barriers');
-      return Array.isArray(barriersResponse?.answer) && barriersResponse.answer.includes('Other');
-    }
-    if (question.id === 'email-address') {
-      const prizeDrawResponse = getResponseFunc('prize-draw-consent');
-      return prizeDrawResponse?.answer === 'Yes, enter me in the prize draw';
-    }
-    return true;
-  };
+  }, [state.currentQuestionIndex, allQuestions, navigate, getResponse, contextNextQuestion, contextPreviousQuestion]);
 
   if (!state.user || !currentQuestion) {
     return (
@@ -97,7 +127,7 @@ export default function Survey() {
             Question {state.currentQuestionIndex + 1} of {state.totalQuestions}
           </span>
           <span className="text-sm font-medium text-tfe-primary">
-            {Math.round((state.currentQuestionIndex / state.totalQuestions) * 100)}% Complete
+            {Math.round(((state.currentQuestionIndex + 1) / state.totalQuestions) * 100)}% Complete
           </span>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, ReactNode } from 'react';
+import { createContext, useContext, useReducer, ReactNode } from 'react';
 import { User, SurveyResponse, Question } from '../types/survey';
 
 interface SurveyState {
@@ -95,6 +95,7 @@ interface SurveyContextType {
   completeSurvey: () => void;
   getResponse: (questionId: string) => SurveyResponse | undefined;
   getProgress: () => number;
+  shouldShowQuestion: (question: Question) => boolean;
 }
 
 const SurveyContext = createContext<SurveyContextType | undefined>(undefined);
@@ -140,7 +141,44 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
 
   const getProgress = () => {
     if (state.totalQuestions === 0) return 0;
-    return (state.currentQuestionIndex / state.totalQuestions) * 100;
+
+    // If we have responses, calculate progress based on answered questions and current position
+    if (state.user && state.user.responses.length > 0) {
+      // We should only consider the current question index as a representation of progress
+      // This accounts for conditional questions being skipped
+      const currentProgress = ((state.currentQuestionIndex + 1) / state.totalQuestions) * 100;
+      
+      // Cap at 100% to prevent exceeding 100%
+      return Math.min(currentProgress, 100);
+    }
+
+    // Default to index-based calculation with +1 to account for the current question
+    return ((state.currentQuestionIndex + 1) / state.totalQuestions) * 100;
+  };
+
+  // Helper function to determine if a question should be shown based on previous answers
+  const shouldShowQuestion = (question: Question) => {
+    // Show gender self-describe only if "Self‑describe" was selected for gender
+    if (question.id === 'gender-self-describe') {
+      const genderResponse = getResponse('gender');
+      return genderResponse?.answer === 'Self‑describe';
+    }
+    
+    // Show barriers "Other" text field only if "Other" was selected
+    if (question.id === 'barriers-other') {
+      const barriersResponse = getResponse('barriers');
+      return Array.isArray(barriersResponse?.answer) && 
+             barriersResponse.answer.includes('Other');
+    }
+    
+    // Show email field only if prize draw consent is "Yes"
+    if (question.id === 'email-address') {
+      const prizeDrawResponse = getResponse('prize-draw-consent');
+      return prizeDrawResponse?.answer === 'Yes, enter me in the prize draw';
+    }
+    
+    // All other questions should be shown by default
+    return true;
   };
 
   return (
@@ -154,6 +192,7 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
         completeSurvey,
         getResponse,
         getProgress,
+        shouldShowQuestion,
       }}
     >
       {children}

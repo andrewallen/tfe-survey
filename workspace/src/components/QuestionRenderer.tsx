@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Question } from '../types/survey';
 import { useSurvey } from '../contexts/SurveyContext';
-import { Star, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import clsx from 'clsx';
 
 interface QuestionRendererProps {
@@ -10,48 +10,21 @@ interface QuestionRendererProps {
 }
 
 export default function QuestionRenderer({ question }: QuestionRendererProps) {
-  const { answerQuestion, getResponse, nextQuestion } = useSurvey();
+  const { answerQuestion, getResponse, shouldShowQuestion } = useSurvey();
   const [selectedValue, setSelectedValue] = useState<string | string[] | number>('');
   const [textValue, setTextValue] = useState('');
 
   const existingResponse = getResponse(question.id);
   
-  // Check if this question should be shown based on previous answers
-  const shouldShowQuestion = useCallback(() => {
-    // Show gender self-describe only if "Self‑describe" was selected for gender
-    if (question.id === 'gender-self-describe') {
-      const genderResponse = getResponse('gender');
-      return genderResponse?.answer === 'Self‑describe';
-    }
-    
-    // Show barriers "Other" text field only if "Other" was selected
-    if (question.id === 'barriers-other') {
-      const barriersResponse = getResponse('barriers');
-      return Array.isArray(barriersResponse?.answer) && 
-             barriersResponse.answer.includes('Other');
-    }
-    
-    // Show email field only if prize draw consent is "Yes"
-    if (question.id === 'email-address') {
-      const prizeDrawResponse = getResponse('prize-draw-consent');
-      return prizeDrawResponse?.answer === 'Yes, enter me in the prize draw';
-    }
-    
-    return true;
-  }, [question.id, getResponse]);
+  // Use the centralized shouldShowQuestion function from the context
+  const checkIfQuestionShouldShow = useCallback(() => {
+    return shouldShowQuestion(question);
+  }, [question, shouldShowQuestion]);
 
-  // Auto-advance if this question shouldn't be shown
-  useEffect(() => {
-    if (!shouldShowQuestion()) {
-      // Small delay to prevent render loop
-      const timer = setTimeout(() => {
-        nextQuestion();
-      }, 50);
-      return () => clearTimeout(timer);
-    }
-  }, [shouldShowQuestion, nextQuestion]);
+  // Remove auto-advance logic to avoid conflicts with Survey.tsx navigation
+  // The Survey component now handles the navigation logic
 
-  if (!shouldShowQuestion()) {
+  if (!shouldShowQuestion(question)) {
     return (
       <div className="flex items-center justify-center min-h-64">
         <div className="text-center">

@@ -14,7 +14,10 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-4xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-tfe-primary rounded-lg flex items-center justify-center">
+              <div 
+                className="w-10 h-10 rounded-lg flex items-center justify-center" 
+                style={{ background: 'var(--tfe-gradient-primary)' }}
+              >
                 <span className="text-white font-bold text-sm">TFE</span>
               </div>
               <h1 className="text-xl font-semibold text-tfe-gray-800">Member Survey</h1>
@@ -36,8 +39,16 @@ export default function Layout({ children }: LayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 py-8 text-center text-tfe-gray-500 text-sm">
-        <p>© 2025 The Fitness Experts. All responses are anonymous and GDPR compliant.</p>
+      <footer className="mt-16 py-8 text-center text-sm">
+        <p className="text-tfe-gray-500">© 2025 The Fitness Experts. All responses are anonymous and GDPR compliant.</p>
+        <div className="mt-4 flex justify-center space-x-4">
+          <a href="https://www.thefitnessexperts.co.uk" target="_blank" rel="noopener noreferrer" className="text-tfe-primary hover:text-tfe-primary-dark transition-colors">
+            Website
+          </a>
+          <a href="https://www.instagram.com/the_fitness_experts" target="_blank" rel="noopener noreferrer" className="text-tfe-primary hover:text-tfe-primary-dark transition-colors">
+            Instagram
+          </a>
+        </div>
       </footer>
     </div>
   );

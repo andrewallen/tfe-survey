@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Play, Shield, Clock, Award } from 'lucide-react';
+import { useTfeTheme } from '../hooks/useTfeTheme';
 
 export default function Welcome() {
   const navigate = useNavigate();
+  const theme = useTfeTheme();
 
   const handleStartSurvey = () => {
     navigate('/survey');
@@ -36,41 +38,41 @@ export default function Welcome() {
       >
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           <div className="text-center">
-            <div className="w-16 h-16 bg-tfe-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Clock className="w-8 h-8 text-tfe-primary" />
+            <div className="w-16 h-16 rounded-full mx-auto mb-3" style={{ ...theme.utils.iconContainerStyle('primary') }}>
+              <Clock className="w-8 h-8" />
             </div>
             <h3 className="font-semibold text-tfe-gray-800 mb-2">5-7 Minutes</h3>
             <p className="text-sm text-tfe-gray-600">Quick and easy to complete</p>
           </div>
           <div className="text-center">
-            <div className="w-16 h-16 bg-tfe-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Shield className="w-8 h-8 text-tfe-accent" />
+            <div className="w-16 h-16 rounded-full mx-auto mb-3" style={{ ...theme.utils.iconContainerStyle('accent') }}>
+              <Shield className="w-8 h-8" />
             </div>
             <h3 className="font-semibold text-tfe-gray-800 mb-2">Anonymous</h3>
             <p className="text-sm text-tfe-gray-600">GDPR compliant & secure</p>
           </div>
           <div className="text-center">
-            <div className="w-16 h-16 bg-tfe-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Award className="w-8 h-8 text-tfe-secondary" />
+            <div className="w-16 h-16 rounded-full mx-auto mb-3" style={{ ...theme.utils.iconContainerStyle('secondary') }}>
+              <Award className="w-8 h-8" />
             </div>
             <h3 className="font-semibold text-tfe-gray-800 mb-2">Prize Draw</h3>
             <p className="text-sm text-tfe-gray-600">Win TFE merchandise</p>
           </div>
         </div>
 
-        <div className="bg-tfe-gray-50 rounded-xl p-6 mb-6">
+        <div className="rounded-xl p-6 mb-6" style={{ backgroundColor: 'var(--tfe-gray-50)' }}>
           <h3 className="font-semibold text-tfe-gray-800 mb-3">Why this matters:</h3>
           <ul className="space-y-2 text-tfe-gray-700">
             <li className="flex items-start">
-              <span className="w-2 h-2 bg-tfe-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              <span style={{ ...theme.utils.bulletPointStyle }}></span>
               Leadership will use your answers to make concrete decisions
             </li>
             <li className="flex items-start">
-              <span className="w-2 h-2 bg-tfe-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              <span className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: 'var(--tfe-primary)' }}></span>
               Help improve class timetables, facilities, and pricing
             </li>
             <li className="flex items-start">
-              <span className="w-2 h-2 bg-tfe-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              <span className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: 'var(--tfe-primary)' }}></span>
               Results will be shared with the community in July
             </li>
           </ul>
@@ -79,7 +81,8 @@ export default function Welcome() {
         <div className="text-center">
           <motion.button
             onClick={handleStartSurvey}
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-tfe-primary to-tfe-accent text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+            className="inline-flex items-center px-8 py-4 transition-all duration-200 transform hover:scale-105"
+            style={{ ...theme.utils.buttonStyle }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

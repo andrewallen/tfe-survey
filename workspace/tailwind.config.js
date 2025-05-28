@@ -8,25 +8,31 @@ export default {
     extend: {
       colors: {
         tfe: {
-          primary: '#FF6B35',
-          secondary: '#004E89',
-          accent: '#00A8E8',
+          primary: 'var(--tfe-primary)',
+          'primary-light': 'var(--tfe-primary-light)',
+          'primary-dark': 'var(--tfe-primary-dark)',
+          secondary: 'var(--tfe-secondary)',
+          'secondary-light': 'var(--tfe-secondary-light)',
+          'secondary-dark': 'var(--tfe-secondary-dark)',
+          accent: 'var(--tfe-accent)',
+          'accent-light': 'var(--tfe-accent-light)',
+          'accent-dark': 'var(--tfe-accent-dark)',
           gray: {
-            50: '#F9FAFB',
-            100: '#F3F4F6',
-            200: '#E5E7EB',
-            300: '#D1D5DB',
-            400: '#9CA3AF',
-            500: '#6B7280',
-            600: '#4B5563',
-            700: '#374151',
-            800: '#1F2937',
-            900: '#111827',
+            50: 'var(--tfe-gray-50)',
+            100: 'var(--tfe-gray-100)',
+            200: 'var(--tfe-gray-200)',
+            300: 'var(--tfe-gray-300)',
+            400: 'var(--tfe-gray-400)',
+            500: 'var(--tfe-gray-500)',
+            600: 'var(--tfe-gray-600)',
+            700: 'var(--tfe-gray-700)',
+            800: 'var(--tfe-gray-800)',
+            900: 'var(--tfe-gray-900)',
           }
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: 'var(--tfe-font-family)',
       },
       animation: {
         'bounce-in': 'bounceIn 0.6s ease-out',

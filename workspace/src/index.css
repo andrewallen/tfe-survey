@@ -1,3 +1,5 @@
+@import './styles/theme.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -46,17 +48,23 @@
 }
 
 .option-button {
-  @apply w-full p-4 text-left rounded-xl border-2 border-tfe-gray-200 bg-white hover:border-tfe-primary hover:bg-tfe-primary/5 transition-all duration-200 cursor-pointer;
+  @apply w-full p-4 text-left rounded-xl border-2 border-tfe-gray-200 bg-white hover:border-tfe-primary transition-all duration-200 cursor-pointer;
+  &:hover {
+    background-color: var(--tfe-primary-light);
+  }
 }
 
 .option-button.selected {
-  @apply border-tfe-primary bg-tfe-primary text-white;
+  @apply border-tfe-primary text-white;
+  background-color: var(--tfe-primary);
 }
 
 .progress-bar {
-  @apply w-full bg-tfe-gray-200 rounded-full h-3 overflow-hidden;
+  @apply w-full rounded-full h-3 overflow-hidden;
+  background-color: var(--tfe-gray-200);
 }
 
 .progress-fill {
-  @apply h-full bg-gradient-to-r from-tfe-primary to-tfe-accent transition-all duration-500 ease-out;
+  @apply h-full transition-all duration-500 ease-out;
+  background: var(--tfe-gradient-primary);
 }
