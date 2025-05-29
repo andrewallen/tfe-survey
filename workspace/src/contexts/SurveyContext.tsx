@@ -19,6 +19,7 @@ type SurveyAction =
   | { type: 'SET_TOTAL_QUESTIONS'; payload: number }
   | { type: 'NEXT_QUESTION' }
   | { type: 'PREVIOUS_QUESTION' }
+  | { type: 'RESET_INDEX'; payload?: number }
   | { type: 'SET_LOADING'; payload: boolean }
   | { type: 'SET_ERROR'; payload: string | null }
   | { type: 'COMPLETE_SURVEY' };
@@ -73,6 +74,11 @@ function surveyReducer(state: SurveyState, action: SurveyAction): SurveyState {
       return {
         ...state,
         currentQuestionIndex: Math.max(state.currentQuestionIndex - 1, 0),
+      };
+    case 'RESET_INDEX':
+      return {
+        ...state,
+        currentQuestionIndex: action.payload ?? 0,
       };
     case 'SET_LOADING':
       return {
@@ -150,6 +156,7 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
 
       if (memberType) {
         dispatch({ type: 'SET_MEMBER_TYPE', payload: memberType });
+        dispatch({ type: 'RESET_INDEX' });
       }
     }
   };
