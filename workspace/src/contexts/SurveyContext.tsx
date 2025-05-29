@@ -59,6 +59,7 @@ function surveyReducer(state: SurveyState, action: SurveyAction): SurveyState {
       return {
         ...state,
         memberType: action.payload,
+        user: state.user ? { ...state.user, memberType: action.payload } : state.user,
       };
     case 'SET_TOTAL_QUESTIONS':
       return {
