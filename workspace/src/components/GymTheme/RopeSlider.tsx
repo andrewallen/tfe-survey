@@ -17,12 +17,13 @@ const RopeSlider: React.FC<RopeSliderProps> = ({
   labels,
 }) => {
   const [isDragging, setIsDragging] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
   
   // Calculate percentage for positioning
   const percentage = ((value - min) / (max - min)) * 100;
   
-  // Handle user interaction
+  // Handle user interaction - simplified
   const updateValue = (clientX: number) => {
     if (!sliderRef.current) return;
     
@@ -81,68 +82,226 @@ const RopeSlider: React.FC<RopeSliderProps> = ({
   }, [isDragging]);
 
   return (
-    <div className="space-y-8 py-6">
-      {/* Rope slider */}
+    <div className="space-y-6 py-6">
+      {/* Tug-of-war rope slider */}
       <div
         ref={sliderRef}
-        className="relative h-10 cursor-pointer"
+        className="relative h-12 cursor-pointer"
         onMouseDown={handleMouseDown}
         onTouchStart={handleTouchStart}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
       >
-        {/* Rope track */}
-        <div className="absolute top-1/2 left-0 w-full h-2 bg-tfe-gray-400 rounded-full transform -translate-y-1/2" />
+        {/* Rope shadow */}
+        <div 
+          className="absolute top-1/2 left-0 w-full h-3 bg-black opacity-10 rounded-full transform -translate-y-1/2 translate-y-1"
+          style={{ filter: 'blur(3px)' }}
+        />
         
-        {/* Rope detail - wavy pattern */}
-        <div className="absolute top-1/2 left-0 w-full h-2 overflow-hidden transform -translate-y-1/2">
+        {/* Main tug-of-war rope */}
+        <div 
+          className="absolute top-1/2 left-0 w-full h-6 transform -translate-y-1/2 rounded-full overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, #D4C5A0 0%, #B8A888 25%, #D4C5A0 50%, #E6D7B8 75%, #D4C5A0 100%)',
+            boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.2), inset 0 -1px 2px rgba(255,255,255,0.3), 0 2px 6px rgba(0,0,0,0.15)'
+          }}
+        >
+          {/* Rope twist pattern */}
           <div 
-            className="h-full"
+            className="absolute inset-0 opacity-40"
             style={{
-              background: 'repeating-linear-gradient(90deg, var(--tfe-gray-500), var(--tfe-gray-500) 5px, var(--tfe-gray-400) 5px, var(--tfe-gray-400) 10px)'
+              background: `
+                repeating-linear-gradient(
+                  45deg,
+                  transparent 0px,
+                  rgba(139,115,85,0.3) 3px,
+                  transparent 6px,
+                  rgba(139,115,85,0.3) 9px,
+                  transparent 12px
+                ),
+                repeating-linear-gradient(
+                  -45deg,
+                  transparent 0px,
+                  rgba(160,144,111,0.3) 3px,
+                  transparent 6px,
+                  rgba(160,144,111,0.3) 9px,
+                  transparent 12px
+                )
+              `
+            }}
+          />
+          
+          {/* Natural fiber texture */}
+          <div 
+            className="absolute inset-0 opacity-30"
+            style={{
+              background: `
+                repeating-linear-gradient(
+                  90deg,
+                  rgba(184,168,136,0.6) 0px,
+                  rgba(212,197,160,0.6) 2px,
+                  rgba(184,168,136,0.6) 4px,
+                  rgba(230,215,184,0.6) 6px
+                )
+              `
             }}
           />
         </div>
         
-        {/* Tick marks */}
-        {Array.from({ length: max - min + 1 }).map((_, i) => (
-          <div
-            key={i}
-            className="absolute top-1/2 w-1 h-4 bg-tfe-gray-600 rounded-full transform -translate-y-1/2"
-            style={{ left: `${(i / (max - min)) * 100}%` }}
-          />
-        ))}
+        {/* Rope end fraying - left */}
+        <div className="absolute top-1/2 left-0 w-3 h-8 transform -translate-y-1/2 overflow-hidden">
+          {Array.from({length: 6}).map((_, i) => (
+            <div 
+              key={i}
+              className="absolute w-px bg-amber-700 rounded-full opacity-50"
+              style={{
+                height: `${4 + Math.random() * 6}px`,
+                left: `${Math.random() * 12}px`,
+                top: `${8 + Math.random() * 16}px`,
+                transform: `rotate(${-30 + Math.random() * 60}deg)`
+              }}
+            />
+          ))}
+        </div>
         
-        {/* Handle - "climbing grip" */}
+        {/* Rope end fraying - right */}
+        <div className="absolute top-1/2 right-0 w-3 h-8 transform -translate-y-1/2 overflow-hidden">
+          {Array.from({length: 6}).map((_, i) => (
+            <div 
+              key={i}
+              className="absolute w-px bg-amber-700 rounded-full opacity-50"
+              style={{
+                height: `${4 + Math.random() * 6}px`,
+                right: `${Math.random() * 12}px`,
+                top: `${8 + Math.random() * 16}px`,
+                transform: `rotate(${-30 + Math.random() * 60}deg)`
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Simple rope knots as tick marks */}
+        {Array.from({ length: max - min + 1 }).map((_, i) => {
+          const knotPosition = (i / (max - min)) * 100;
+          const isActiveKnot = Math.abs(percentage - knotPosition) < 5;
+          
+          return (
+            <div
+              key={i}
+              className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2"
+              style={{ left: `${knotPosition}%` }}
+            >
+              <div 
+                className={`w-3 h-8 rounded-full transition-all duration-200 ${
+                  isActiveKnot ? 'scale-110' : ''
+                }`}
+                style={{
+                  background: 'linear-gradient(135deg, #B8A888, #D4C5A0, #B8A888)',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.2)'
+                }}
+              />
+            </div>
+          );
+        })}
+        
+        {/* Red bandana grip marker - positioned to center on nearest knot */}
         <motion.div
-          className={`absolute top-1/2 w-10 h-10 -ml-5 rounded-full transform -translate-y-1/2 flex items-center justify-center
-            ${isDragging ? 'scale-110' : ''}
-          `}
+          className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 z-10"
           style={{ 
-            left: `${percentage}%`,
-            background: 'var(--tfe-primary)',
-            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-            cursor: 'grab'
+            left: `${((value - min) / (max - min)) * 100}%` 
           }}
           animate={{ 
-            scale: isDragging ? 1.1 : 1 
+            scale: isDragging ? 1.05 : (isHovering ? 1.02 : 1),
+            rotate: isDragging ? `${Math.sin(Date.now() / 300) * 2}deg` : 0
           }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95, cursor: 'grabbing' }}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.98 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          {/* Handle grip texture */}
-          <div className="w-6 h-6 rounded-full bg-tfe-gray-200 flex items-center justify-center">
-            <span className="text-sm font-bold text-tfe-gray-800">{value}</span>
+          {/* Bandana background */}
+          <div 
+            className="relative w-16 h-10 rounded-lg overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, #C53030 0%, #E53E3E 25%, #C53030 50%, #FC8181 75%, #C53030 100%)',
+              boxShadow: '0 3px 8px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.3)'
+            }}
+          >
+            {/* Bandana pattern */}
+            <div 
+              className="absolute inset-0 opacity-40"
+              style={{
+                background: `
+                  repeating-linear-gradient(
+                    45deg,
+                    transparent 0px,
+                    rgba(255,255,255,0.2) 2px,
+                    transparent 4px,
+                    rgba(0,0,0,0.1) 6px,
+                    transparent 8px
+                  )
+                `
+              }}
+            />
+            
+            {/* Bandana knot/tie marks */}
+            <div className="absolute top-1 left-2 w-2 h-1 bg-red-900 rounded-full opacity-60" />
+            <div className="absolute top-1 right-2 w-2 h-1 bg-red-900 rounded-full opacity-60" />
+            <div className="absolute bottom-1 left-3 w-3 h-1 bg-red-800 rounded-full opacity-50" />
+            
+            {/* Value display */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span 
+                className="text-lg font-bold text-white drop-shadow-lg"
+                style={{
+                  textShadow: '1px 1px 2px rgba(0,0,0,0.8), 0 0 4px rgba(0,0,0,0.5)',
+                  fontFamily: 'system-ui, sans-serif'
+                }}
+              >
+                {value}
+              </span>
+            </div>
+            
+            {/* Fabric texture overlay */}
+            <div 
+              className="absolute inset-0 opacity-20"
+              style={{
+                background: `
+                  repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    rgba(0,0,0,0.1) 1px,
+                    transparent 2px
+                  ),
+                  repeating-linear-gradient(
+                    90deg,
+                    transparent 0px,
+                    rgba(255,255,255,0.1) 1px,
+                    transparent 2px
+                  )
+                `
+              }}
+            />
           </div>
+          
+          {/* Bandana tie effect */}
+          <div 
+            className="absolute -top-1 left-1/2 w-2 h-2 transform -translate-x-1/2 rounded-full"
+            style={{
+              background: 'linear-gradient(135deg, #A0201D, #C53030)',
+              boxShadow: '0 1px 2px rgba(0,0,0,0.4)'
+            }}
+          />
         </motion.div>
       </div>
       
       {/* Labels */}
       {labels && (
-        <div className="flex justify-between text-sm text-tfe-gray-600 px-1">
-          <span>{labels[min]}</span>
+        <div className="flex justify-between text-sm text-tfe-gray-600 px-2 mt-4">
+          <span className="font-medium">{labels[min]}</span>
           {max - min > 2 && labels[Math.round((max + min) / 2)] && (
-            <span>{labels[Math.round((max + min) / 2)]}</span>
+            <span className="font-medium">{labels[Math.round((max + min) / 2)]}</span>
           )}
-          <span>{labels[max]}</span>
+          <span className="font-medium">{labels[max]}</span>
         </div>
       )}
     </div>
