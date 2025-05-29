@@ -16,6 +16,7 @@ type SurveyAction =
   | { type: 'START_SURVEY'; payload: { user: User; totalQuestions: number } }
   | { type: 'ANSWER_QUESTION'; payload: SurveyResponse }
   | { type: 'SET_MEMBER_TYPE'; payload: 'intro' | 'current' | 'new' | 'previous' }
+  | { type: 'SET_TOTAL_QUESTIONS'; payload: number }
   | { type: 'NEXT_QUESTION' }
   | { type: 'PREVIOUS_QUESTION' }
   | { type: 'SET_LOADING'; payload: boolean }
@@ -58,6 +59,11 @@ function surveyReducer(state: SurveyState, action: SurveyAction): SurveyState {
         ...state,
         memberType: action.payload,
       };
+    case 'SET_TOTAL_QUESTIONS':
+      return {
+        ...state,
+        totalQuestions: action.payload,
+      };
     case 'NEXT_QUESTION':
       return {
         ...state,
@@ -96,6 +102,7 @@ interface SurveyContextType {
   state: SurveyState;
   startSurvey: (totalQuestions: number) => void;
   answerQuestion: (questionId: string, answer: string | string[] | number | Record<string, string>) => void;
+  setTotalQuestions: (total: number) => void;
   nextQuestion: () => void;
   previousQuestion: () => void;
   completeSurvey: () => void;
@@ -120,6 +127,10 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
     // Start with 'intro' type to show intro questions first
     dispatch({ type: 'SET_MEMBER_TYPE', payload: 'intro' });
     dispatch({ type: 'START_SURVEY', payload: { user, totalQuestions } });
+  };
+
+  const setTotalQuestions = (total: number) => {
+    dispatch({ type: 'SET_TOTAL_QUESTIONS', payload: total });
   };
 
   const answerQuestion = (questionId: string, answer: string | string[] | number | Record<string, string>) => {
@@ -231,6 +242,7 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
         state,
         startSurvey,
         answerQuestion,
+        setTotalQuestions,
         nextQuestion,
         previousQuestion,
         completeSurvey,

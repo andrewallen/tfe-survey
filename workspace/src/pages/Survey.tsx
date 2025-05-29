@@ -8,8 +8,9 @@ import NavigationButtons from '../components/NavigationButtons';
 export default function Survey() {
   const { 
     state, 
-    startSurvey, 
-    getResponse, 
+    startSurvey,
+    getResponse,
+    setTotalQuestions,
     nextQuestion: contextNextQuestion,
     previousQuestion: contextPreviousQuestion,
     shouldShowQuestion
@@ -57,8 +58,10 @@ export default function Survey() {
 
     if (!state.user) {
       startSurvey(nonIntroQuestions.length);
+    } else if (state.memberType && state.memberType !== 'intro') {
+      setTotalQuestions(nonIntroQuestions.length);
     }
-  }, [questionSection, state.memberType, startSurvey]);
+  }, [questionSection, state.memberType, startSurvey, setTotalQuestions]);
 
   // Custom function to find the next valid question to show
   const findNextValidQuestion = (startIndex: number) => {
