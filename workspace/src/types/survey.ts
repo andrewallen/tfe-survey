@@ -6,7 +6,7 @@ export interface SurveyResponse {
 
 export interface User {
   id: string;
-  memberType: 'current' | 'new' | 'previous';
+  memberType: 'intro' | 'current' | 'new' | 'previous';
   responses: SurveyResponse[];
   consentGiven: boolean;
   startedAt: Date;
