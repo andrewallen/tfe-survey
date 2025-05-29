@@ -5,7 +5,7 @@ export default function ProgressBar() {
   const { getProgress, state } = useSurvey();
   const progress = getProgress();
 
-  if (!state.user) return null;
+  if (!state.user || state.memberType === 'intro') return null;
 
   return (
     <div className="mt-4">
