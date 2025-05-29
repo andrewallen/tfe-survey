@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 interface RopeSliderProps {
@@ -19,9 +19,34 @@ const RopeSlider: React.FC<RopeSliderProps> = ({
   const [isDragging, setIsDragging] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
+
+  // Cache random fray details so rope ends stay consistent between renders
+  const leftFrays = useMemo(
+    () =>
+      Array.from({ length: 6 }).map(() => ({
+        height: 4 + Math.random() * 6,
+        offset: Math.random() * 12,
+        top: 8 + Math.random() * 16,
+        rotate: -30 + Math.random() * 60,
+      })),
+    []
+  );
+
+  const rightFrays = useMemo(
+    () =>
+      Array.from({ length: 6 }).map(() => ({
+        height: 4 + Math.random() * 6,
+        offset: Math.random() * 12,
+        top: 8 + Math.random() * 16,
+        rotate: -30 + Math.random() * 60,
+      })),
+    []
+  );
   
   // Calculate percentage for positioning
   const percentage = ((value - min) / (max - min)) * 100;
+  const tension = Math.abs(percentage - 50) / 50;
+  const sag = tension * 4;
   
   // Handle user interaction - simplified
   const updateValue = (clientX: number) => {
@@ -93,17 +118,24 @@ const RopeSlider: React.FC<RopeSliderProps> = ({
         onMouseLeave={() => setIsHovering(false)}
       >
         {/* Rope shadow */}
-        <div 
-          className="absolute top-1/2 left-0 w-full h-3 bg-black opacity-10 rounded-full transform -translate-y-1/2 translate-y-1"
-          style={{ filter: 'blur(3px)' }}
+        <div
+          className="absolute top-1/2 left-0 w-full h-3 bg-black opacity-10 rounded-full"
+          style={{
+            filter: 'blur(3px)',
+            transform: `translateY(calc(-50% + ${4 + sag}px))`
+          }}
         />
         
         {/* Main tug-of-war rope */}
-        <div 
-          className="absolute top-1/2 left-0 w-full h-6 transform -translate-y-1/2 rounded-full overflow-hidden"
+        <div
+          className="absolute top-1/2 left-0 w-full h-6 rounded-full overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, #D4C5A0 0%, #B8A888 25%, #D4C5A0 50%, #E6D7B8 75%, #D4C5A0 100%)',
-            boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.2), inset 0 -1px 2px rgba(255,255,255,0.3), 0 2px 6px rgba(0,0,0,0.15)'
+            background:
+              'linear-gradient(135deg, #D4C5A0 0%, #B8A888 25%, #D4C5A0 50%, #E6D7B8 75%, #D4C5A0 100%)',
+            boxShadow:
+              'inset 0 2px 4px rgba(0,0,0,0.2), inset 0 -1px 2px rgba(255,255,255,0.3), 0 2px 6px rgba(0,0,0,0.15)',
+            transform: `translateY(calc(-50% + ${sag}px))`,
+            filter: `brightness(${1 - tension * 0.1})`
           }}
         >
           {/* Rope twist pattern */}
@@ -150,15 +182,15 @@ const RopeSlider: React.FC<RopeSliderProps> = ({
         
         {/* Rope end fraying - left */}
         <div className="absolute top-1/2 left-0 w-3 h-8 transform -translate-y-1/2 overflow-hidden">
-          {Array.from({length: 6}).map((_, i) => (
-            <div 
+          {leftFrays.map((f, i) => (
+            <div
               key={i}
               className="absolute w-px bg-amber-700 rounded-full opacity-50"
               style={{
-                height: `${4 + Math.random() * 6}px`,
-                left: `${Math.random() * 12}px`,
-                top: `${8 + Math.random() * 16}px`,
-                transform: `rotate(${-30 + Math.random() * 60}deg)`
+                height: `${f.height}px`,
+                left: `${f.offset}px`,
+                top: `${f.top}px`,
+                transform: `rotate(${f.rotate}deg)`
               }}
             />
           ))}
@@ -166,15 +198,15 @@ const RopeSlider: React.FC<RopeSliderProps> = ({
         
         {/* Rope end fraying - right */}
         <div className="absolute top-1/2 right-0 w-3 h-8 transform -translate-y-1/2 overflow-hidden">
-          {Array.from({length: 6}).map((_, i) => (
-            <div 
+          {rightFrays.map((f, i) => (
+            <div
               key={i}
               className="absolute w-px bg-amber-700 rounded-full opacity-50"
               style={{
-                height: `${4 + Math.random() * 6}px`,
-                right: `${Math.random() * 12}px`,
-                top: `${8 + Math.random() * 16}px`,
-                transform: `rotate(${-30 + Math.random() * 60}deg)`
+                height: `${f.height}px`,
+                right: `${f.offset}px`,
+                top: `${f.top}px`,
+                transform: `rotate(${f.rotate}deg)`
               }}
             />
           ))}
@@ -191,13 +223,16 @@ const RopeSlider: React.FC<RopeSliderProps> = ({
               className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2"
               style={{ left: `${knotPosition}%` }}
             >
-              <div 
+              <div
                 className={`w-3 h-8 rounded-full transition-all duration-200 ${
                   isActiveKnot ? 'scale-110' : ''
                 }`}
                 style={{
-                  background: 'linear-gradient(135deg, #B8A888, #D4C5A0, #B8A888)',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.2)'
+                  background: isActiveKnot
+                    ? 'var(--tfe-accent)'
+                    : 'linear-gradient(135deg, #B8A888, #D4C5A0, #B8A888)',
+                  boxShadow:
+                    '0 1px 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.2)'
                 }}
               />
             </div>
@@ -210,19 +245,24 @@ const RopeSlider: React.FC<RopeSliderProps> = ({
           style={{ 
             left: `${((value - min) / (max - min)) * 100}%` 
           }}
-          animate={{ 
-            scale: isDragging ? 1.05 : (isHovering ? 1.02 : 1),
-            rotate: isDragging ? `${Math.sin(Date.now() / 300) * 2}deg` : 0
+          animate={{
+            scale: isDragging ? 1.05 : isHovering ? 1.02 : 1,
+            rotate: isDragging ? [-2, 2, -2] : 0
           }}
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          transition={{
+            scale: { type: 'spring', stiffness: 300, damping: 20 },
+            rotate: isDragging
+              ? { duration: 0.3, repeat: Infinity, repeatType: 'mirror' }
+              : { duration: 0.2 }
+          }}
         >
           {/* Bandana background */}
-          <div 
+          <div
             className="relative w-16 h-10 rounded-lg overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, #C53030 0%, #E53E3E 25%, #C53030 50%, #FC8181 75%, #C53030 100%)',
+              background: 'linear-gradient(135deg, var(--tfe-primary) 0%, var(--tfe-accent) 100%)',
               boxShadow: '0 3px 8px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.3)'
             }}
           >
