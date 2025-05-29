@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSurvey } from '../contexts/SurveyContext';
 import { useNavigate } from 'react-router-dom';
-import { commonShellQuestions } from '../data/surveyQuestions';
-import { Question } from '../types/survey';
+import { Question, SurveySection } from '../types/survey';
 import QuestionRenderer from '../components/QuestionRenderer';
 import NavigationButtons from '../components/NavigationButtons';
 
@@ -18,23 +17,33 @@ export default function Survey() {
   const navigate = useNavigate();
   const [allQuestions, setAllQuestions] = useState<Question[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
+  const [questionSection, setQuestionSection] = useState<SurveySection | null>(null);
 
   useEffect(() => {
-    let questions = commonShellQuestions.groups.flatMap(group => group.questions);
-    
+    fetch('/surveyQuestions.json')
+      .then(res => res.json())
+      .then((data: SurveySection) => setQuestionSection(data))
+      .catch(err => console.error('Failed to load survey questions', err));
+  }, []);
+
+  useEffect(() => {
+    if (!questionSection) return;
+
+    let questions = questionSection.groups.flatMap(group => group.questions);
+
     if (state.user?.memberType) {
       const memberType = state.user.memberType;
       if (memberType === 'previous') {
         questions = questions.filter(q => q.id !== 'membership-length');
       }
     }
-    
+
     setAllQuestions(questions);
-    
+
     if (!state.user) {
       startSurvey('current', questions.length);
     }
-  }, [state.user?.memberType, startSurvey]);
+  }, [questionSection, state.user?.memberType, startSurvey]);
 
   // Custom function to find the next valid question to show
   const findNextValidQuestion = (startIndex: number) => {
