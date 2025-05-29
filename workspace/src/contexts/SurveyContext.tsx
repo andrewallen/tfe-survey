@@ -13,6 +13,7 @@ interface SurveyState {
 type SurveyAction =
   | { type: 'START_SURVEY'; payload: { user: User; totalQuestions: number } }
   | { type: 'ANSWER_QUESTION'; payload: SurveyResponse }
+  | { type: 'SET_MEMBER_TYPE'; payload: 'current' | 'new' | 'previous' }
   | { type: 'NEXT_QUESTION' }
   | { type: 'PREVIOUS_QUESTION' }
   | { type: 'SET_LOADING'; payload: boolean }
@@ -50,6 +51,15 @@ function surveyReducer(state: SurveyState, action: SurveyAction): SurveyState {
         user: {
           ...state.user,
           responses: updatedResponses,
+        },
+      };
+    case 'SET_MEMBER_TYPE':
+      if (!state.user) return state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          memberType: action.payload,
         },
       };
     case 'NEXT_QUESTION':
@@ -121,6 +131,18 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
       timestamp: new Date(),
     };
     dispatch({ type: 'ANSWER_QUESTION', payload: response });
+
+    // Update member type in state when the screener question is answered
+    if (questionId === 'member-type' && typeof answer === 'string') {
+      let memberType: 'current' | 'new' | 'previous' | null = null;
+      if (answer.startsWith('Current')) memberType = 'current';
+      else if (answer.startsWith('New')) memberType = 'new';
+      else if (answer.startsWith('Previous')) memberType = 'previous';
+
+      if (memberType) {
+        dispatch({ type: 'SET_MEMBER_TYPE', payload: memberType });
+      }
+    }
   };
 
   const nextQuestion = () => {
