@@ -5,7 +5,15 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Question } from '../types/survey';
 import clsx from 'clsx';
 
-export default function NavigationButtons({ currentQuestion }: { currentQuestion: Question | null }) {
+export default function NavigationButtons({ 
+  currentQuestion, 
+  allQuestions, 
+  currentQuestionIndex 
+}: { 
+  currentQuestion: Question | null;
+  allQuestions?: Question[];
+  currentQuestionIndex?: number;
+}) {
   const { 
     state, 
     nextQuestion, 
@@ -17,7 +25,22 @@ export default function NavigationButtons({ currentQuestion }: { currentQuestion
   const navigate = useNavigate();
 
   const isFirstQuestion = state.currentQuestionIndex === 0;
-  const isLastQuestion = state.currentQuestionIndex === state.totalQuestions - 1;
+  
+  // Check if this is the last valid question by looking ahead
+  const isLastQuestion = () => {
+    if (!allQuestions || currentQuestionIndex === undefined) {
+      return state.currentQuestionIndex >= state.totalQuestions - 1;
+    }
+    
+    // Look for any more valid questions after the current one
+    for (let i = currentQuestionIndex + 1; i < allQuestions.length; i++) {
+      const question = allQuestions[i];
+      if (shouldShowQuestion(question)) {
+        return false; // Found another valid question
+      }
+    }
+    return true; // No more valid questions found
+  };
 
   // Check if the current question is answered if it's required
   const isCurrentQuestionAnswered = () => {
@@ -53,7 +76,7 @@ export default function NavigationButtons({ currentQuestion }: { currentQuestion
       return;
     }
     
-    if (isLastQuestion) {
+    if (isLastQuestion()) {
       completeSurvey();
       navigate('/thank-you');
     } else {
@@ -92,8 +115,8 @@ export default function NavigationButtons({ currentQuestion }: { currentQuestion
         whileHover={{ scale: isCurrentQuestionAnswered() ? 1.05 : 1 }}
         whileTap={{ scale: isCurrentQuestionAnswered() ? 0.95 : 1 }}
       >
-        {isLastQuestion ? 'Complete Survey' : 'Next'}
-        {!isLastQuestion && <ChevronRight className="w-5 h-5 ml-1" />}
+        {isLastQuestion() ? 'Complete Survey' : 'Next'}
+        {!isLastQuestion() && <ChevronRight className="w-5 h-5 ml-1" />}
       </motion.button>
     </div>
   );

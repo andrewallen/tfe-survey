@@ -11,9 +11,11 @@ export default function Survey() {
     startSurvey,
     getResponse,
     setTotalQuestions,
+    updateAnsweredCount,
     nextQuestion: contextNextQuestion,
     previousQuestion: contextPreviousQuestion,
-    shouldShowQuestion
+    shouldShowQuestion,
+    getProgress
   } = useSurvey();
   const navigate = useNavigate();
   const [allQuestions, setAllQuestions] = useState<Question[]>([]);
@@ -52,16 +54,15 @@ export default function Survey() {
     setAllQuestions(questions);
 
     // Calculate total questions excluding intro questions (GDPR consent and member-type screener)
-    const nonIntroQuestions = questions.filter(q => 
-      !q.memberTypes || !q.memberTypes.includes('intro')
-    );
+    const introQuestionIds = ['gdpr-consent', 'member-type'];
+    const nonIntroQuestions = questions.filter(q => !introQuestionIds.includes(q.id));
 
     if (!state.user) {
       startSurvey(nonIntroQuestions.length);
     } else if (state.memberType && state.memberType !== 'intro') {
       setTotalQuestions(nonIntroQuestions.length);
     }
-  }, [questionSection, state.memberType, startSurvey, setTotalQuestions]);
+  }, [questionSection, state.memberType, state.user, startSurvey, setTotalQuestions]);
 
   // Custom function to find the next valid question to show
   const findNextValidQuestion = (startIndex: number) => {
@@ -100,6 +101,7 @@ export default function Survey() {
           questionToShow = null; // No more questions to show
         }
       }
+      
       // If the index has changed, we need to update the context's state
       if (needsToUpdateIndex) {
         // Calculate the difference between where we are and where we should be
@@ -128,12 +130,28 @@ export default function Survey() {
       // Update the current question in the local state
       setCurrentQuestion(questionToShow);
 
+      // Update answered questions count for progress calculation
+      if (state.memberType !== 'intro') {
+        // Hardcode the intro question IDs for reliability
+        const introQuestionIds = ['gdpr-consent', 'member-type'];
+        
+        const answeredNonIntroQuestions = allQuestions
+          .slice(0, questionIndex + 1)
+          .filter(q => {
+            // Check if it's NOT an intro question, should be shown, and has been answered
+            const isNotIntro = !introQuestionIds.includes(q.id);
+            return isNotIntro && shouldShowQuestion(q) && getResponse(q.id);
+          }).length;
+        
+        updateAnsweredCount(answeredNonIntroQuestions);
+      }
+
       if (!questionToShow) {
         // If there's no valid question to show, navigate to thank you
         navigate('/thank-you');
       }
     }
-  }, [state.currentQuestionIndex, allQuestions, navigate, getResponse, contextNextQuestion, contextPreviousQuestion]);
+  }, [state.currentQuestionIndex, allQuestions, state.memberType, navigate, getResponse, contextNextQuestion, contextPreviousQuestion, shouldShowQuestion, updateAnsweredCount]);
 
   if (!state.user || !currentQuestion) {
     return (
@@ -147,41 +165,52 @@ export default function Survey() {
   }
 
   // Check if current question is an intro question
-  const isIntroQuestion = currentQuestion?.memberTypes?.includes('intro') || false;
+  const isIntroQuestion = () => {
+    if (!currentQuestion) return false;
+    
+    // Hardcode the intro question IDs for reliability
+    const introQuestionIds = ['gdpr-consent', 'member-type'];
+    return introQuestionIds.includes(currentQuestion.id);
+  };
   
-  // Calculate progress for non-intro questions only
-  const calculateNonIntroProgress = () => {
-    if (isIntroQuestion || state.totalQuestions === 0) return 0;
+  // Calculate current question number for display (non-intro questions only)
+  const getCurrentQuestionNumber = () => {
+    if (isIntroQuestion()) return 0;
     
-    // Count how many non-intro questions we've passed (including current)
-    const nonIntroQuestionsPassed = allQuestions
+    // Hardcode the intro question IDs for reliability
+    const introQuestionIds = ['gdpr-consent', 'member-type'];
+    
+    return allQuestions
       .slice(0, state.currentQuestionIndex + 1)
-      .filter(q => !q.memberTypes || !q.memberTypes.includes('intro'))
-      .length;
-    
-    return Math.round((nonIntroQuestionsPassed / state.totalQuestions) * 100);
+      .filter(q => {
+        // Check if it's NOT an intro question and should be shown
+        const isNotIntro = !introQuestionIds.includes(q.id);
+        return isNotIntro && shouldShowQuestion(q);
+      }).length;
   };
 
   return (
     <div className="max-w-2xl mx-auto">
       {/* Only show progress counter for non-intro questions */}
-      {!isIntroQuestion && (
+      {!isIntroQuestion() && (
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <span className="text-sm text-tfe-gray-500">
-              Question {allQuestions.slice(0, state.currentQuestionIndex + 1)
-                .filter(q => !q.memberTypes || !q.memberTypes.includes('intro'))
-                .length} of {state.totalQuestions}
+              Question {getCurrentQuestionNumber()} of {state.totalQuestions}
             </span>
             <span className="text-sm font-medium text-tfe-primary">
-              {calculateNonIntroProgress()}% Complete
+              {Math.round(getProgress())}% Complete
             </span>
           </div>
         </div>
       )}
 
       <QuestionRenderer question={currentQuestion} />
-      <NavigationButtons currentQuestion={currentQuestion} /> 
+      <NavigationButtons 
+        currentQuestion={currentQuestion} 
+        allQuestions={allQuestions}
+        currentQuestionIndex={state.currentQuestionIndex}
+      /> 
     </div>
   );
 }

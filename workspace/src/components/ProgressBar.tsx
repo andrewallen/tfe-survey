@@ -5,7 +5,8 @@ export default function ProgressBar() {
   const { getProgress, state } = useSurvey();
   const progress = getProgress();
 
-  if (!state.user || state.memberType === 'intro') return null;
+  // Don't show progress bar for intro questions or when progress is 0
+  if (!state.user || state.memberType === 'intro' || progress === 0) return null;
 
   return (
     <div className="mt-4">

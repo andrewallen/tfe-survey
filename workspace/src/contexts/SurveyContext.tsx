@@ -7,6 +7,7 @@ interface SurveyState {
   responses: SurveyResponse[];
   currentQuestionIndex: number;
   totalQuestions: number;
+  answeredQuestionsCount: number;
   isLoading: boolean;
   error: string | null;
   showConfetti: boolean;
@@ -17,6 +18,7 @@ type SurveyAction =
   | { type: 'ANSWER_QUESTION'; payload: SurveyResponse }
   | { type: 'SET_MEMBER_TYPE'; payload: 'intro' | 'current' | 'new' | 'previous' }
   | { type: 'SET_TOTAL_QUESTIONS'; payload: number }
+  | { type: 'UPDATE_ANSWERED_COUNT'; payload: number }
   | { type: 'NEXT_QUESTION' }
   | { type: 'PREVIOUS_QUESTION' }
   | { type: 'RESET_INDEX'; payload?: number }
@@ -30,6 +32,7 @@ const initialState: SurveyState = {
   responses: [],
   currentQuestionIndex: 0,
   totalQuestions: 0,
+  answeredQuestionsCount: 0,
   isLoading: false,
   error: null,
   showConfetti: false,
@@ -43,6 +46,7 @@ function surveyReducer(state: SurveyState, action: SurveyAction): SurveyState {
         user: action.payload.user,
         totalQuestions: action.payload.totalQuestions,
         currentQuestionIndex: 0,
+        answeredQuestionsCount: 0,
         isLoading: false,
         error: null,
       };
@@ -66,6 +70,11 @@ function surveyReducer(state: SurveyState, action: SurveyAction): SurveyState {
         ...state,
         totalQuestions: action.payload,
       };
+    case 'UPDATE_ANSWERED_COUNT':
+      return {
+        ...state,
+        answeredQuestionsCount: action.payload,
+      };
     case 'NEXT_QUESTION':
       return {
         ...state,
@@ -80,6 +89,7 @@ function surveyReducer(state: SurveyState, action: SurveyAction): SurveyState {
       return {
         ...state,
         currentQuestionIndex: action.payload ?? 0,
+        answeredQuestionsCount: 0,
       };
     case 'SET_LOADING':
       return {
@@ -110,6 +120,7 @@ interface SurveyContextType {
   startSurvey: (totalQuestions: number) => void;
   answerQuestion: (questionId: string, answer: string | string[] | number | Record<string, string>) => void;
   setTotalQuestions: (total: number) => void;
+  updateAnsweredCount: (count: number) => void;
   nextQuestion: () => void;
   previousQuestion: () => void;
   completeSurvey: () => void;
@@ -138,6 +149,10 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
 
   const setTotalQuestions = (total: number) => {
     dispatch({ type: 'SET_TOTAL_QUESTIONS', payload: total });
+  };
+
+  const updateAnsweredCount = (count: number) => {
+    dispatch({ type: 'UPDATE_ANSWERED_COUNT', payload: count });
   };
 
   const answerQuestion = (questionId: string, answer: string | string[] | number | Record<string, string>) => {
@@ -179,23 +194,18 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
   };
 
   const getProgress = () => {
-    if (state.totalQuestions === 0) return 0;
-
     // Don't show progress for intro questions
-    if (state.memberType === 'intro') return 0;
-
-    // If we have responses, calculate progress based on answered questions and current position
-    if (state.responses.length > 0) {
-      // We should only consider the current question index as a representation of progress
-      // This accounts for conditional questions being skipped
-      const currentProgress = ((state.currentQuestionIndex + 1) / state.totalQuestions) * 100;
-      
-      // Cap at 100% to prevent exceeding 100%
-      return Math.min(currentProgress, 100);
+    if (state.memberType === 'intro' || state.totalQuestions === 0) {
+      return 0;
     }
 
-    // Default to index-based calculation with +1 to account for the current question
-    return ((state.currentQuestionIndex + 1) / state.totalQuestions) * 100;
+    // Use the answered questions count if available, otherwise fall back to current index
+    if (state.answeredQuestionsCount > 0) {
+      return Math.min((state.answeredQuestionsCount / state.totalQuestions) * 100, 100);
+    }
+
+    // Fallback to index-based calculation
+    return Math.min(((state.currentQuestionIndex + 1) / state.totalQuestions) * 100, 100);
   };
 
   // Helper function to determine if a question should be shown based on previous answers
@@ -251,6 +261,7 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
         startSurvey,
         answerQuestion,
         setTotalQuestions,
+        updateAnsweredCount,
         nextQuestion,
         previousQuestion,
         completeSurvey,
