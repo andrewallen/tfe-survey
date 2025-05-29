@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface BattleRopeWaveProps {
   min: number;
@@ -16,216 +16,227 @@ const BattleRopeWave: React.FC<BattleRopeWaveProps> = ({
   onChange,
   labels,
 }) => {
-  const [isDragging, setIsDragging] = useState(false);
-  const [animateWave, setAnimateWave] = useState(false);
-  const sliderRef = useRef<HTMLDivElement>(null);
+  const [isActive, setIsActive] = useState(false);
+  const [showPulse, setShowPulse] = useState(false);
   
-  // Calculate percentage for positioning and wave intensity
-  const percentage = ((value - min) / (max - min)) * 100;
-  const waveIntensity = (value - min) / (max - min); // 0 to 1
+  // Calculate intensity based on value
+  const intensity = (value - min) / (max - min);
   
-  // Handle user interaction
-  const updateValue = (clientX: number) => {
-    if (!sliderRef.current) return;
-    
-    const rect = sliderRef.current.getBoundingClientRect();
-    const position = (clientX - rect.left) / rect.width;
-    const newValue = Math.round(min + position * (max - min));
-    
-    // Clamp value between min and max
-    const clampedValue = Math.max(min, Math.min(max, newValue));
-    onChange(clampedValue);
-    
-    // Animate the wave when value changes
-    setAnimateWave(true);
-    setTimeout(() => setAnimateWave(false), 600);
-  };
-  
-  // Mouse event handlers
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    updateValue(e.clientX);
-  };
-  
-  // Touch event handlers
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setIsDragging(true);
-    updateValue(e.touches[0].clientX);
-  };
-  
-  // Setup event listeners for move and end events
+  // Auto-animate waves based on intensity
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (isDragging) {
-        updateValue(e.clientX);
+    const interval = setInterval(() => {
+      if (intensity > 0) {
+        setShowPulse(true);
+        setTimeout(() => setShowPulse(false), 300);
       }
-    };
+    }, 800 - (intensity * 600)); // Faster animation at higher intensities
     
-    const handleTouchMove = (e: TouchEvent) => {
-      if (isDragging && e.touches[0]) {
-        updateValue(e.touches[0].clientX);
-      }
-    };
-    
-    const handleEnd = () => {
-      setIsDragging(false);
-    };
-    
-    if (isDragging) {
-      window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('touchmove', handleTouchMove);
-      window.addEventListener('mouseup', handleEnd);
-      window.addEventListener('touchend', handleEnd);
-    }
-    
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('mouseup', handleEnd);
-      window.removeEventListener('touchend', handleEnd);
-    };
-  }, [isDragging]);
+    return () => clearInterval(interval);
+  }, [intensity]);
 
-  // Generate wave path based on intensity
-  const generateWavePath = () => {
-    const amplitude = 10 + waveIntensity * 30; // Increases with value
-    const frequency = 2 + waveIntensity * 3; // More waves with higher value
+  // Generate dynamic wave pattern
+  const generateWaves = (time: number) => {
+    const waves = [];
+    const numWaves = Math.ceil(intensity * 5) + 1;
     
-    let path = `M 0 50`;
-    
-    const steps = 200;
-    for (let i = 0; i <= steps; i++) {
-      const x = (i / steps) * 100;
-      const y = 50 + Math.sin(x * 0.1 * frequency + (animateWave ? Date.now() * 0.01 : 0)) * amplitude;
-      path += ` L ${x} ${y}`;
+    for (let i = 0; i < numWaves; i++) {
+      const amplitude = 15 + (intensity * 25);
+      const frequency = 0.05 + (intensity * 0.03);
+      const phase = (time * 0.003) + (i * Math.PI / 3);
+      
+      waves.push({
+        id: i,
+        amplitude,
+        frequency,
+        phase,
+        opacity: 0.7 - (i * 0.15)
+      });
     }
     
-    return path;
+    return waves;
+  };
+
+  // Get rope thickness based on intensity
+  const getRopeThickness = () => {
+    return 8 + (intensity * 12);
+  };
+
+  // Get intensity description
+  const getIntensityText = () => {
+    if (intensity === 0) return "Select intensity";
+    if (intensity < 0.2) return "Gentle waves";
+    if (intensity < 0.4) return "Building rhythm";
+    if (intensity < 0.6) return "Strong motion";
+    if (intensity < 0.8) return "High intensity";
+    return "Maximum power!";
+  };
+
+  // Get color based on intensity
+  const getIntensityColor = () => {
+    if (intensity < 0.3) return "var(--tfe-blue-500)";
+    if (intensity < 0.6) return "var(--tfe-green-500)";
+    if (intensity < 0.8) return "var(--tfe-yellow-500)";
+    return "var(--tfe-red-500)";
   };
 
   return (
-    <div className="space-y-6 py-6">
-      {/* Battle rope slider */}
-      <div
-        ref={sliderRef}
-        className="relative h-24 cursor-pointer"
-        onMouseDown={handleMouseDown}
-        onTouchStart={handleTouchStart}
-      >
-        {/* Wave visualization */}
-        <svg 
-          className="w-full h-full overflow-visible"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          {/* Wave path */}
-          <motion.path
-            d={generateWavePath()}
-            fill="none"
-            strokeWidth={3 + waveIntensity * 4}
-            stroke="var(--tfe-gray-600)"
-            strokeLinecap="round"
-            animate={{ 
-              d: generateWavePath(),
-              strokeWidth: 3 + waveIntensity * 4
-            }}
-            transition={{ 
-              repeat: Infinity,
-              duration: 0.5,
-              ease: "linear" 
-            }}
-          />
+    <div className="space-y-8 py-6">
+      {/* Wave Visualization */}
+      <div className="relative h-32 bg-gradient-to-b from-gray-50 to-gray-100 rounded-xl overflow-hidden border border-gray-200">
+        {/* Anchor points */}
+        <div className="absolute left-4 top-1/2 w-4 h-4 bg-gray-800 rounded-full transform -translate-y-1/2 z-10"></div>
+        <div className="absolute right-4 top-1/2 w-4 h-4 bg-gray-800 rounded-full transform -translate-y-1/2 z-10"></div>
+        
+        {/* Animated rope waves */}
+        <svg className="w-full h-full absolute inset-0" viewBox="0 0 400 120">
+          <defs>
+            <linearGradient id="ropeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#4B5563" />
+              <stop offset="50%" stopColor="#6B7280" />
+              <stop offset="100%" stopColor="#4B5563" />
+            </linearGradient>
+            <filter id="shadow">
+              <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.3"/>
+            </filter>
+          </defs>
           
-          {/* Secondary wave for visual effect */}
-          <motion.path
-            d={generateWavePath()}
-            fill="none"
-            strokeWidth={2 + waveIntensity * 2}
-            stroke="var(--tfe-primary)"
-            strokeLinecap="round"
-            strokeDasharray="4 4"
-            animate={{ 
-              d: generateWavePath(),
-              strokeWidth: 2 + waveIntensity * 2
-            }}
-            transition={{ 
-              repeat: Infinity,
-              duration: 0.4,
-              ease: "linear",
-              delay: 0.2
-            }}
-          />
-        </svg>
-        
-        {/* Value indicators/ticks */}
-        <div className="absolute left-0 right-0 bottom-0 flex justify-between px-4">
-          {Array.from({ length: max - min + 1 }).map((_, i) => (
-            <div
-              key={i}
-              className="w-1 h-4 bg-tfe-gray-500 rounded-full"
-              onClick={() => onChange(min + i)}
+          <AnimatePresence>
+            {generateWaves(Date.now()).map((wave) => (
+              <motion.path
+                key={wave.id}
+                d={`M 20 60 Q 100 ${60 - wave.amplitude * Math.sin(wave.phase)} 200 60 Q 300 ${60 + wave.amplitude * Math.sin(wave.phase + Math.PI)} 380 60`}
+                fill="none"
+                stroke={intensity > 0.7 ? getIntensityColor() : "url(#ropeGradient)"}
+                strokeWidth={getRopeThickness() - (wave.id * 2)}
+                strokeLinecap="round"
+                opacity={wave.opacity}
+                filter="url(#shadow)"
+                animate={{
+                  d: [
+                    `M 20 60 Q 100 ${60 - wave.amplitude * Math.sin(wave.phase)} 200 60 Q 300 ${60 + wave.amplitude * Math.sin(wave.phase + Math.PI)} 380 60`,
+                    `M 20 60 Q 100 ${60 + wave.amplitude * Math.sin(wave.phase + Math.PI)} 200 60 Q 300 ${60 - wave.amplitude * Math.sin(wave.phase)} 380 60`,
+                    `M 20 60 Q 100 ${60 - wave.amplitude * Math.sin(wave.phase)} 200 60 Q 300 ${60 + wave.amplitude * Math.sin(wave.phase + Math.PI)} 380 60`
+                  ]
+                }}
+                transition={{
+                  duration: 1.5 - (intensity * 0.8),
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            ))}
+          </AnimatePresence>
+          
+          {/* Pulse effect */}
+          {showPulse && (
+            <motion.circle
+              cx="200"
+              cy="60"
+              r="0"
+              fill={getIntensityColor()}
+              opacity="0.3"
+              animate={{
+                r: [0, 40, 60],
+                opacity: [0.3, 0.1, 0]
+              }}
+              transition={{ duration: 0.6 }}
             />
-          ))}
-        </div>
-        
-        {/* Handle/grip */}
-        <motion.div
-          className="absolute bottom-6 w-12 h-12 -ml-6 flex items-center justify-center"
-          style={{ 
-            left: `${percentage}%`,
-            cursor: isDragging ? 'grabbing' : 'grab'
-          }}
-          animate={{ 
-            scale: isDragging ? 1.1 : 1,
-            y: animateWave ? [0, -10, 0] : 0
-          }}
-          transition={{
-            type: 'spring',
-            stiffness: 300,
-            damping: 20
-          }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {/* Grip texture/handle */}
-          <div className="w-12 h-12 rounded-full bg-tfe-primary flex items-center justify-center shadow-lg">
-            <div className="w-8 h-8 rounded-full bg-tfe-gray-200 flex items-center justify-center">
-              <span className="text-lg font-bold text-tfe-gray-800">{value}</span>
-            </div>
-            {/* Grip texture lines */}
-            <div className="absolute w-full h-full">
-              {[45, 135, 225, 315].map((rotation) => (
-                <div 
-                  key={rotation}
-                  className="absolute w-full h-0.5 bg-tfe-primary-dark opacity-50 top-1/2 left-0"
-                  style={{ 
-                    transform: `translateY(-50%) rotate(${rotation}deg)`,
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </motion.div>
+          )}
+        </svg>
       </div>
-      
+
+      {/* Interactive Rating Buttons */}
+      <div className="grid grid-cols-5 gap-3">
+        {Array.from({ length: max - min + 1 }).map((_, index) => {
+          const ratingValue = min + index;
+          const isSelected = value === ratingValue;
+          const buttonIntensity = index / (max - min);
+          
+          return (
+            <motion.button
+              key={ratingValue}
+              onClick={() => {
+                onChange(ratingValue);
+                setIsActive(true);
+                setTimeout(() => setIsActive(false), 200);
+              }}
+              className={`
+                relative h-16 rounded-lg border-2 font-semibold text-lg transition-all duration-200
+                ${isSelected 
+                  ? 'border-tfe-primary bg-tfe-primary text-white shadow-lg' 
+                  : 'border-gray-300 bg-white text-gray-700 hover:border-tfe-primary hover:bg-tfe-primary/10'
+                }
+              `}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              animate={isSelected && isActive ? { scale: [1, 1.1, 1] } : {}}
+            >
+              {ratingValue}
+              
+              {/* Intensity indicator bars */}
+              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-0.5">
+                {Array.from({ length: 3 }).map((_, barIndex) => (
+                  <div
+                    key={barIndex}
+                    className={`
+                      w-1 rounded-full transition-all duration-300
+                      ${buttonIntensity > (barIndex * 0.33) 
+                        ? isSelected 
+                          ? 'bg-white h-2' 
+                          : 'bg-tfe-primary h-2'
+                        : 'bg-gray-300 h-1'
+                      }
+                    `}
+                  />
+                ))}
+              </div>
+            </motion.button>
+          );
+        })}
+      </div>
+
       {/* Labels */}
       {labels && (
-        <div className="flex justify-between text-sm text-tfe-gray-600 px-2">
-          <span>{labels[min]}</span>
-          {max - min > 2 && labels[Math.floor((max + min) / 2)] && (
-            <span>{labels[Math.floor((max + min) / 2)]}</span>
-          )}
-          <span>{labels[max]}</span>
+        <div className="flex justify-between text-sm text-gray-600 px-2">
+          <span className="font-medium">{labels[min]}</span>
+          <span className="font-medium">{labels[max]}</span>
         </div>
       )}
-      
-      {/* Intensity description based on value */}
-      <div className="text-center text-sm font-medium" style={{ color: `var(--tfe-primary)` }}>
-        {waveIntensity < 0.25 && "Light Waves"}
-        {waveIntensity >= 0.25 && waveIntensity < 0.5 && "Building Momentum"}
-        {waveIntensity >= 0.5 && waveIntensity < 0.75 && "Strong Waves"}
-        {waveIntensity >= 0.75 && "Maximum Intensity!"}
-      </div>
+
+      {/* Intensity Feedback */}
+      <motion.div 
+        className="text-center space-y-2"
+        animate={{ 
+          scale: showPulse ? [1, 1.05, 1] : 1,
+          color: getIntensityColor()
+        }}
+      >
+        <div className="text-lg font-bold">
+          {getIntensityText()}
+        </div>
+        
+        {intensity > 0 && (
+          <motion.div 
+            className="flex justify-center space-x-1"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+          >
+            {Array.from({ length: 5 }).map((_, i) => (
+              <motion.div
+                key={i}
+                className="w-2 h-6 rounded-full"
+                style={{ backgroundColor: getIntensityColor() }}
+                animate={{
+                  height: intensity > (i * 0.2) ? 24 : 8,
+                  opacity: intensity > (i * 0.2) ? 1 : 0.3
+                }}
+                transition={{ delay: i * 0.1 }}
+              />
+            ))}
+          </motion.div>
+        )}
+      </motion.div>
     </div>
   );
 };
