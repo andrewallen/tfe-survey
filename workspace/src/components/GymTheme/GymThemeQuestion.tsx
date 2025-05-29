@@ -1,9 +1,6 @@
 import React from 'react';
-import WeightStackRating from './WeightStackRating';
 import RopeSlider from './RopeSlider';
 import KettlebellOptions from './KettlebellOptions';
-import BarbellPlateRating from './BarbellPlateRating';
-import BattleRopeWave from './BattleRopeWave';
 import MedicineBallSelector from './MedicineBallSelector';
 import { Question } from '../../types/survey';
 
@@ -11,14 +8,14 @@ interface GymThemeQuestionProps {
   question: Question;
   value: string | string[] | number;
   onChange: (value: string | string[] | number) => void;
-  mode?: 'classic' | 'weightStack' | 'ropeSlider' | 'kettlebell' | 'barbellPlate' | 'battleRope' | 'medicineBall' | 'dumbbellRack';
+  mode?: 'classic' | 'ropeSlider' | 'kettlebell' | 'medicineBall';
 }
 
 const GymThemeQuestion: React.FC<GymThemeQuestionProps> = ({
   question,
   value,
   onChange,
-  mode = 'weightStack',
+  mode = 'ropeSlider',
 }) => {
   // Render rating scales
   const renderRating = () => {
@@ -30,52 +27,14 @@ const GymThemeQuestion: React.FC<GymThemeQuestionProps> = ({
           min={min}
           max={max}
           value={typeof value === 'number' ? value : min}
-          onChange={(val) => onChange(val)}
-          labels={labels}
-        />
-      );
-    } else if (mode === 'barbellPlate') {
-      return (
-        <BarbellPlateRating 
-          min={min}
-          max={max}
-          value={typeof value === 'number' ? value : min}
-          onChange={(val) => onChange(val)}
-          labels={labels}
-        />
-      );
-    } else if (mode === 'battleRope') {
-      return (
-        <BattleRopeWave 
-          min={min}
-          max={max}
-          value={typeof value === 'number' ? value : min}
-          onChange={(val) => onChange(val)}
-          labels={labels}
-        />
-      );
-    } else if (mode === 'dumbbellRack') {
-      return (
-        <WeightStackRating 
-          min={min}
-          max={max}
-          value={typeof value === 'number' ? value : min}
-          onChange={(val) => onChange(val)}
+          onChange={(val: number) => onChange(val)}
           labels={labels}
         />
       );
     }
     
-    // Default to weight stack
-    return (
-      <WeightStackRating 
-        min={min}
-        max={max}
-        value={typeof value === 'number' ? value : min}
-        onChange={(val) => onChange(val)}
-        labels={labels}
-      />
-    );
+    // Default to null for classic mode (will use default renderer)
+    return null;
   };
   
   // Render choice questions
