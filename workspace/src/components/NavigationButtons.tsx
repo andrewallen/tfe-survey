@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Question } from '../types/survey';
 import clsx from 'clsx';
-import { useTfeTheme } from '../hooks/useTfeTheme';
 
 export default function NavigationButtons({ currentQuestion }: { currentQuestion: Question | null }) {
   const { 

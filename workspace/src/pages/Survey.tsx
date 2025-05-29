@@ -29,10 +29,20 @@ export default function Survey() {
   useEffect(() => {
     if (!questionSection) return;
 
-    let questions = questionSection.groups.flatMap(group => group.questions);
+    // Filter groups by memberType first, then flatten questions
+    const filteredGroups = questionSection.groups.filter(group => {
+      // If group has memberTypes restriction, check if current memberType is included
+      if (group.memberTypes && group.memberTypes.length > 0) {
+        return state.memberType && group.memberTypes.includes(state.memberType);
+      }
+      return true; // Show group if no memberType restriction
+    });
 
-    if (state.user?.memberType) {
-      const memberType = state.user.memberType;
+    let questions = filteredGroups.flatMap(group => group.questions);
+
+    // Additional individual question filtering
+    if (state.memberType) {
+      const memberType = state.memberType;
       if (memberType === 'previous') {
         questions = questions.filter(q => q.id !== 'membership-length');
       }
@@ -40,10 +50,15 @@ export default function Survey() {
 
     setAllQuestions(questions);
 
+    // Calculate total questions excluding intro questions (GDPR consent and member-type screener)
+    const nonIntroQuestions = questions.filter(q => 
+      !q.memberTypes || !q.memberTypes.includes('intro')
+    );
+
     if (!state.user) {
-      startSurvey('current', questions.length);
+      startSurvey(nonIntroQuestions.length);
     }
-  }, [questionSection, state.user?.memberType, startSurvey]);
+  }, [questionSection, state.memberType, startSurvey]);
 
   // Custom function to find the next valid question to show
   const findNextValidQuestion = (startIndex: number) => {
@@ -128,18 +143,39 @@ export default function Survey() {
     );
   }
 
+  // Check if current question is an intro question
+  const isIntroQuestion = currentQuestion?.memberTypes?.includes('intro') || false;
+  
+  // Calculate progress for non-intro questions only
+  const calculateNonIntroProgress = () => {
+    if (isIntroQuestion || state.totalQuestions === 0) return 0;
+    
+    // Count how many non-intro questions we've passed (including current)
+    const nonIntroQuestionsPassed = allQuestions
+      .slice(0, state.currentQuestionIndex + 1)
+      .filter(q => !q.memberTypes || !q.memberTypes.includes('intro'))
+      .length;
+    
+    return Math.round((nonIntroQuestionsPassed / state.totalQuestions) * 100);
+  };
+
   return (
     <div className="max-w-2xl mx-auto">
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <span className="text-sm text-tfe-gray-500">
-            Question {state.currentQuestionIndex + 1} of {state.totalQuestions}
-          </span>
-          <span className="text-sm font-medium text-tfe-primary">
-            {Math.round(((state.currentQuestionIndex + 1) / state.totalQuestions) * 100)}% Complete
-          </span>
+      {/* Only show progress counter for non-intro questions */}
+      {!isIntroQuestion && (
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-sm text-tfe-gray-500">
+              Question {allQuestions.slice(0, state.currentQuestionIndex + 1)
+                .filter(q => !q.memberTypes || !q.memberTypes.includes('intro'))
+                .length} of {state.totalQuestions}
+            </span>
+            <span className="text-sm font-medium text-tfe-primary">
+              {calculateNonIntroProgress()}% Complete
+            </span>
+          </div>
         </div>
-      </div>
+      )}
 
       <QuestionRenderer question={currentQuestion} />
       <NavigationButtons currentQuestion={currentQuestion} /> 

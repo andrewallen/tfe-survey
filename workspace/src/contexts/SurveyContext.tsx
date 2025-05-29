@@ -3,6 +3,8 @@ import { User, SurveyResponse, Question } from '../types/survey';
 
 interface SurveyState {
   user: User | null;
+  memberType: 'intro' | 'current' | 'new' | 'previous' | null;
+  responses: SurveyResponse[];
   currentQuestionIndex: number;
   totalQuestions: number;
   isLoading: boolean;
@@ -13,7 +15,7 @@ interface SurveyState {
 type SurveyAction =
   | { type: 'START_SURVEY'; payload: { user: User; totalQuestions: number } }
   | { type: 'ANSWER_QUESTION'; payload: SurveyResponse }
-  | { type: 'SET_MEMBER_TYPE'; payload: 'current' | 'new' | 'previous' }
+  | { type: 'SET_MEMBER_TYPE'; payload: 'intro' | 'current' | 'new' | 'previous' }
   | { type: 'NEXT_QUESTION' }
   | { type: 'PREVIOUS_QUESTION' }
   | { type: 'SET_LOADING'; payload: boolean }
@@ -22,6 +24,8 @@ type SurveyAction =
 
 const initialState: SurveyState = {
   user: null,
+  memberType: null,
+  responses: [],
   currentQuestionIndex: 0,
   totalQuestions: 0,
   isLoading: false,
@@ -41,26 +45,18 @@ function surveyReducer(state: SurveyState, action: SurveyAction): SurveyState {
         error: null,
       };
     case 'ANSWER_QUESTION':
-      if (!state.user) return state;
       const updatedResponses = [
-        ...state.user.responses.filter(r => r.questionId !== action.payload.questionId),
+        ...state.responses.filter(r => r.questionId !== action.payload.questionId),
         action.payload,
       ];
       return {
         ...state,
-        user: {
-          ...state.user,
-          responses: updatedResponses,
-        },
+        responses: updatedResponses,
       };
     case 'SET_MEMBER_TYPE':
-      if (!state.user) return state;
       return {
         ...state,
-        user: {
-          ...state.user,
-          memberType: action.payload,
-        },
+        memberType: action.payload,
       };
     case 'NEXT_QUESTION':
       return {
@@ -98,8 +94,8 @@ function surveyReducer(state: SurveyState, action: SurveyAction): SurveyState {
 
 interface SurveyContextType {
   state: SurveyState;
-  startSurvey: (memberType: 'current' | 'new' | 'previous', totalQuestions: number) => void;
-  answerQuestion: (questionId: string, answer: string | string[] | number) => void;
+  startSurvey: (totalQuestions: number) => void;
+  answerQuestion: (questionId: string, answer: string | string[] | number | Record<string, string>) => void;
   nextQuestion: () => void;
   previousQuestion: () => void;
   completeSurvey: () => void;
@@ -113,18 +109,20 @@ const SurveyContext = createContext<SurveyContextType | undefined>(undefined);
 export function SurveyProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(surveyReducer, initialState);
 
-  const startSurvey = (memberType: 'current' | 'new' | 'previous', totalQuestions: number) => {
+  const startSurvey = (totalQuestions: number) => {
     const user: User = {
       id: crypto.randomUUID(),
-      memberType,
+      memberType: 'current', // This will be updated later when the member-type question is answered
       responses: [],
       consentGiven: false,
       startedAt: new Date(),
     };
+    // Start with 'intro' type to show intro questions first
+    dispatch({ type: 'SET_MEMBER_TYPE', payload: 'intro' });
     dispatch({ type: 'START_SURVEY', payload: { user, totalQuestions } });
   };
 
-  const answerQuestion = (questionId: string, answer: string | string[] | number) => {
+  const answerQuestion = (questionId: string, answer: string | string[] | number | Record<string, string>) => {
     const response: SurveyResponse = {
       questionId,
       answer,
@@ -158,14 +156,17 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
   };
 
   const getResponse = (questionId: string) => {
-    return state.user?.responses.find(r => r.questionId === questionId);
+    return state.responses.find(r => r.questionId === questionId);
   };
 
   const getProgress = () => {
     if (state.totalQuestions === 0) return 0;
 
+    // Don't show progress for intro questions
+    if (state.memberType === 'intro') return 0;
+
     // If we have responses, calculate progress based on answered questions and current position
-    if (state.user && state.user.responses.length > 0) {
+    if (state.responses.length > 0) {
       // We should only consider the current question index as a representation of progress
       // This accounts for conditional questions being skipped
       const currentProgress = ((state.currentQuestionIndex + 1) / state.totalQuestions) * 100;
@@ -180,6 +181,13 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
 
   // Helper function to determine if a question should be shown based on previous answers
   const shouldShowQuestion = (question: Question) => {
+    // Check if question has memberType restrictions
+    if (question.memberTypes && question.memberTypes.length > 0) {
+      if (!state.memberType || !question.memberTypes.includes(state.memberType)) {
+        return false;
+      }
+    }
+
     // Show gender self-describe only if "Self‑describe" was selected for gender
     if (question.id === 'gender-self-describe') {
       const genderResponse = getResponse('gender');
@@ -189,6 +197,20 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
     // Show barriers "Other" text field only if "Other" was selected
     if (question.id === 'barriers-other') {
       const barriersResponse = getResponse('barriers');
+      return Array.isArray(barriersResponse?.answer) && 
+             barriersResponse.answer.includes('Other');
+    }
+
+    // Show new member friction points "Other" text field only if "Other" was selected
+    if (question.id === 'new-member-friction-other') {
+      const frictionResponse = getResponse('new-member-friction');
+      return Array.isArray(frictionResponse?.answer) && 
+             frictionResponse.answer.includes('Other');
+    }
+
+    // Show new member motivation barriers "Other" text field only if "Other" was selected
+    if (question.id === 'new-member-motivation-barriers-other') {
+      const barriersResponse = getResponse('new-member-motivation-barriers');
       return Array.isArray(barriersResponse?.answer) && 
              barriersResponse.answer.includes('Other');
     }

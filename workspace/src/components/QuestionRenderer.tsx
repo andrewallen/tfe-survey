@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Question } from '../types/survey';
 import { useSurvey } from '../contexts/SurveyContext';
@@ -11,16 +11,12 @@ interface QuestionRendererProps {
 
 export default function QuestionRenderer({ question }: QuestionRendererProps) {
   const { answerQuestion, getResponse, shouldShowQuestion } = useSurvey();
-  const [selectedValue, setSelectedValue] = useState<string | string[] | number>('');
+  const [selectedValue, setSelectedValue] = useState<string | string[] | number | Record<string, string>>('');
   const [textValue, setTextValue] = useState('');
 
   const existingResponse = getResponse(question.id);
   
   // Use the centralized shouldShowQuestion function from the context
-  const checkIfQuestionShouldShow = useCallback(() => {
-    return shouldShowQuestion(question);
-  }, [question, shouldShowQuestion]);
-
   // Remove auto-advance logic to avoid conflicts with Survey.tsx navigation
   // The Survey component now handles the navigation logic
 
@@ -42,12 +38,18 @@ export default function QuestionRenderer({ question }: QuestionRendererProps) {
         setTextValue(existingResponse.answer);
       }
     } else {
-      setSelectedValue(question.type === 'multiple-choice' ? [] : '');
+      if (question.type === 'multiple-choice') {
+        setSelectedValue([]);
+      } else if (question.type === 'matrix') {
+        setSelectedValue({});
+      } else {
+        setSelectedValue('');
+      }
       setTextValue('');
     }
   }, [question.id, existingResponse]);
 
-  const handleAnswer = (value: string | string[] | number) => {
+  const handleAnswer = (value: string | string[] | number | Record<string, string>) => {
     setSelectedValue(value);
     answerQuestion(question.id, value);
   };
@@ -234,6 +236,51 @@ export default function QuestionRenderer({ question }: QuestionRendererProps) {
     </div>
   );
 
+  const renderMatrix = () => {
+    if (!question.matrixOptions) return null;
+    
+    const matrixResponses = (selectedValue as Record<string, string>) || {};
+    const { rows, columns } = question.matrixOptions;
+    
+    return (
+      <div className="space-y-6">
+        {rows.map((row, rowIndex) => (
+          <motion.div
+            key={row}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: rowIndex * 0.1 }}
+            className="space-y-3"
+          >
+            <h3 className="font-medium text-tfe-gray-800">{row}</h3>
+            <div className="flex flex-wrap gap-2">
+              {columns.map((column) => (
+                <motion.button
+                  key={`${row}-${column}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: (rowIndex * columns.length + columns.indexOf(column)) * 0.05 }}
+                  onClick={() => {
+                    const newResponses = { ...matrixResponses, [row]: column };
+                    handleAnswer(newResponses);
+                  }}
+                  className={clsx(
+                    'px-4 py-2 rounded-lg border-2 font-medium transition-all duration-200 text-sm',
+                    matrixResponses[row] === column
+                      ? 'bg-tfe-primary border-tfe-primary text-white'
+                      : 'border-tfe-gray-300 hover:border-tfe-primary hover:text-tfe-primary'
+                  )}
+                >
+                  {column}
+                </motion.button>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    );
+  };
+
   const renderQuestionContent = () => {
     switch (question.type) {
       case 'single-choice':
@@ -248,6 +295,8 @@ export default function QuestionRenderer({ question }: QuestionRendererProps) {
         return renderNumber();
       case 'consent':
         return renderConsent();
+      case 'matrix':
+        return renderMatrix();
       default:
         return null;
     }

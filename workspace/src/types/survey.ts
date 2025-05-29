@@ -1,6 +1,6 @@
 export interface SurveyResponse {
   questionId: string;
-  answer: string | string[] | number;
+  answer: string | string[] | number | Record<string, string>;
   timestamp: Date;
 }
 
@@ -15,11 +15,12 @@ export interface User {
 
 export interface Question {
   id: string;
-  type: 'single-choice' | 'multiple-choice' | 'rating' | 'text' | 'number' | 'consent';
+  type: 'single-choice' | 'multiple-choice' | 'rating' | 'text' | 'number' | 'consent' | 'matrix';
   title: string;
   subtitle?: string;
   options?: string[];
   required: boolean;
+  memberTypes?: ('intro' | 'current' | 'new' | 'previous')[];
   ratingScale?: {
     min: number;
     max: number;
@@ -31,12 +32,17 @@ export interface Question {
     maxLength?: number;
     pattern?: string;
   };
+  matrixOptions?: {
+    rows: string[];
+    columns: string[];
+  };
 }
 
 export interface QuestionGroup {
   id: string;
   title: string;
   description?: string;
+  memberTypes?: ('intro' | 'current' | 'new' | 'previous')[];
   questions: Question[];
 }
 
@@ -44,5 +50,5 @@ export interface SurveySection {
   id: string;
   title: string;
   groups: QuestionGroup[];
-  memberTypes: ('current' | 'new' | 'previous')[];
+  memberTypes: ('intro' | 'current' | 'new' | 'previous')[];
 }
