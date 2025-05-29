@@ -11,7 +11,7 @@ interface GymThemeQuestionProps {
   question: Question;
   value: string | string[] | number;
   onChange: (value: string | string[] | number) => void;
-  mode?: 'classic' | 'weightStack' | 'ropeSlider' | 'kettlebell' | 'barbellPlate' | 'battleRope' | 'medicineBall';
+  mode?: 'classic' | 'weightStack' | 'ropeSlider' | 'kettlebell' | 'barbellPlate' | 'battleRope' | 'medicineBall' | 'dumbbellRack';
 }
 
 const GymThemeQuestion: React.FC<GymThemeQuestionProps> = ({
@@ -47,6 +47,16 @@ const GymThemeQuestion: React.FC<GymThemeQuestionProps> = ({
     } else if (mode === 'battleRope') {
       return (
         <BattleRopeWave 
+          min={min}
+          max={max}
+          value={typeof value === 'number' ? value : min}
+          onChange={(val) => onChange(val)}
+          labels={labels}
+        />
+      );
+    } else if (mode === 'dumbbellRack') {
+      return (
+        <WeightStackRating 
           min={min}
           max={max}
           value={typeof value === 'number' ? value : min}

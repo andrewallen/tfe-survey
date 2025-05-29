@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import GymThemeQuestion from '../components/GymTheme/GymThemeQuestion';
+import WeightStackRating from '../components/GymTheme/WeightStackRating';
 import { Question } from '../types/survey';
 
 const GymThemeDemo: React.FC = () => {
@@ -56,7 +57,8 @@ const GymThemeDemo: React.FC = () => {
     weightStack: 3,
     ropeSlider: 4,
     barbellPlate: 2,
-    battleRope: 5
+    battleRope: 5,
+    dumbbellRack: 4
   });
   
   const [multipleChoiceValue, setMultipleChoiceValue] = useState<string[]>(['Strength Training']);
@@ -115,6 +117,25 @@ const GymThemeDemo: React.FC = () => {
             mode="battleRope"
           />
           <p className="mt-3 text-sm text-tfe-gray-500">Selected value: {ratingValues.battleRope}</p>
+        </div>
+        
+        <div className="mb-8 p-6 bg-gray-50 rounded-lg">
+          <h3 className="text-xl font-medium mb-4">Progressive Dumbbell Rack Rating</h3>
+          <p className="text-sm mb-4 text-tfe-gray-600">{ratingQuestion.title}</p>
+          <WeightStackRating 
+            min={1}
+            max={5}
+            value={ratingValues.dumbbellRack}
+            onChange={(val: number) => setRatingValues({...ratingValues, dumbbellRack: val})}
+            labels={{
+              1: 'Poor',
+              2: 'Fair',
+              3: 'Good',
+              4: 'Great',
+              5: 'Excellent'
+            }}
+          />
+          <p className="mt-3 text-sm text-tfe-gray-500">Selected value: {ratingValues.dumbbellRack}</p>
         </div>
       </section>
       

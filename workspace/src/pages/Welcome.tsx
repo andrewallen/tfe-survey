@@ -10,6 +10,10 @@ export default function Welcome() {
   const handleStartSurvey = () => {
     navigate('/survey');
   };
+  
+  const goToDemo = () => {
+    navigate('/gym-theme-demo');
+  };
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -78,7 +82,7 @@ export default function Welcome() {
           </ul>
         </div>
 
-        <div className="text-center">
+        <div className="text-center space-y-4">
           <motion.button
             onClick={handleStartSurvey}
             className="inline-flex items-center px-8 py-4 transition-all duration-200 transform hover:scale-105"
@@ -89,6 +93,18 @@ export default function Welcome() {
             <Play className="w-5 h-5 mr-2" />
             Start Survey
           </motion.button>
+          
+          <div className="flex justify-center pt-2">
+            <motion.button
+              onClick={goToDemo}
+              className="text-tfe-gray-600 hover:text-tfe-primary text-sm underline flex items-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View Component Demos
+            </motion.button>
+          </div>
+          
           <p className="text-sm text-tfe-gray-500 mt-4">
             No right or wrong answers—please be completely candid
           </p>
